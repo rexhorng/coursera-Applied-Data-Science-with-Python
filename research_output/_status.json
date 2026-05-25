@@ -4,8 +4,8 @@
   "phases": {
     "A_evidence_finder": "done (all 10 companies)",
     "B_usage_analyst": "done (all 10 companies)",
-    "C_verifier": "in_progress",
-    "D_report_writer": "pending"
+    "C_verifier": "done",
+    "D_report_writer": "in_progress"
   },
   "github_push_status": "BLOCKED - git proxy and GitHub API both return 403 (read-only integration token, no contents:write). Work is committed locally only. Needs user to grant write access / re-auth, then re-push.",
   "design_notes": [
@@ -15,15 +15,15 @@
     "Vendor nuance: Microsoft (owns GitHub Copilot), Google (makes Gemini CLI/Antigravity), Amazon (makes Q), Apple etc. may BUILD tools as well as USE them - these are tracked as distinct signals."
   ],
   "companies": {
-    "apple":     {"label": "Apple (AAPL)",                 "research": "done", "verify": "pending", "report": "pending"},
-    "amd":       {"label": "AMD (AMD)",                     "research": "done", "verify": "pending", "report": "pending"},
-    "nvidia":    {"label": "NVIDIA (NVDA)",                 "research": "done",        "verify": "pending", "report": "pending"},
-    "broadcom":  {"label": "Broadcom (AVGO)",               "research": "done", "verify": "pending", "report": "pending"},
-    "mediatek":  {"label": "MediaTek (2454.TW)",            "research": "done", "verify": "pending", "report": "pending"},
-    "qualcomm":  {"label": "Qualcomm (QCOM)",               "research": "done", "verify": "pending", "report": "pending"},
-    "google":    {"label": "Alphabet / Google (GOOGL)",    "research": "done", "verify": "pending", "report": "pending"},
-    "marvell":   {"label": "Marvell Technology (MRVL)",    "research": "done", "verify": "pending", "report": "pending"},
-    "cisco":     {"label": "Cisco Systems (CSCO)",          "research": "done", "verify": "pending", "report": "pending"},
-    "microsoft": {"label": "Microsoft (MSFT)",             "research": "done",        "verify": "pending", "report": "pending"}
+    "apple":     {"label": "Apple (AAPL)",                 "research": "done", "verify": "done", "report": "pending"},
+    "amd":       {"label": "AMD (AMD)",                     "research": "done", "verify": "done", "report": "pending"},
+    "nvidia":    {"label": "NVIDIA (NVDA)",                 "research": "done",        "verify": "done", "report": "pending"},
+    "broadcom":  {"label": "Broadcom (AVGO)",               "research": "done", "verify": "done", "report": "pending"},
+    "mediatek":  {"label": "MediaTek (2454.TW)",            "research": "done", "verify": "done", "report": "pending"},
+    "qualcomm":  {"label": "Qualcomm (QCOM)",               "research": "done", "verify": "done", "report": "pending"},
+    "google":    {"label": "Alphabet / Google (GOOGL)",    "research": "done", "verify": "done", "report": "pending"},
+    "marvell":   {"label": "Marvell Technology (MRVL)",    "research": "done", "verify": "done", "report": "pending"},
+    "cisco":     {"label": "Cisco Systems (CSCO)",          "research": "done", "verify": "done", "report": "pending"},
+    "microsoft": {"label": "Microsoft (MSFT)",             "research": "done",        "verify": "done", "report": "pending"}
   }
 }
