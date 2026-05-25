@@ -1,0 +1,59 @@
+{
+  "company": "Broadcom",
+  "ticker": "AVGO",
+  "company_key": "broadcom",
+  "research_date": "2026-05-25",
+  "agent": "A_evidence_finder",
+  "no_evidence_found": false,
+  "tools_found": [
+    {
+      "tool_name": "AI coding assistants / agentic AI engineering tools (vendor unnamed; deployed and governed via VMware Tanzu Platform)",
+      "tool_category": "agentic coding agent",
+      "signal_types": ["internal_dogfooding"],
+      "signal_summary": "Broadcom's Global Technology Organization (GTO) internally rolled out agentic AI coding assistants for thousands of its own developers, governing them through the VMware Tanzu Platform with MCP integrations that chain internal ticketing systems through to code commits and automatic pull-request submission. The specific consumer tool (Claude Code, Copilot, Cursor, etc.) is not named in the source.",
+      "evidence": [
+        {
+          "claim": "Broadcom's Global Technology Organization is rolling out agentic AI engineering tools to boost productivity for thousands of developers, using Tanzu Platform to deliver safer, compliant coding assistants powered by MCP servers with centralized governance, cost control and AI safety.",
+          "source_url": "https://news.broadcom.com/app-dev/broadcom-tanzu-platform-agentic-business-transformation",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": "2025-12-10",
+          "quote": "Broadcom's Global Technology Organization is rolling out agentic AI engineering tools to boost productivity and ROI for thousands of developers."
+        },
+        {
+          "claim": "Broadcom GTO built a novel MCP authorization structure for function chaining so developers can use natural language to direct an AI agent to find the next task, have the AI coding assistant implement the change, and automatically submit a pull request (linking internal ticketing through to code commit).",
+          "source_url": "https://news.broadcom.com/app-dev/broadcom-tanzu-platform-agentic-business-transformation",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": "2025-12-10",
+          "quote": "developers able to utilize natural language processing to direct an AI agent to find their next task, have the AI coding assistant implement the requested changes, and automatically submit a pull request"
+        },
+        {
+          "claim": "Broadcom cited concerns about shadow AI and the need to safely augment coding assistants with internal-tool access via MCP; Tanzu Platform lets the GTO team view MCP server usage to tune/optimize and retire unused servers to control technical debt and cost.",
+          "source_url": "https://news.broadcom.com/app-dev/broadcom-tanzu-platform-agentic-business-transformation",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": "2025-12-10",
+          "quote": "growing pressure and risk of shadow AI and safely augmenting coding assistants with access to internal tools through Model Context Protocol (MCP) integrations"
+        }
+      ]
+    },
+    {
+      "tool_name": "Anthropic Claude (model provider integrated into Tanzu Platform; relevant as the governed model behind coding assistants, but evidenced as a product integration)",
+      "tool_category": "AI code assistant",
+      "signal_types": ["product_integration"],
+      "signal_summary": "Tanzu Platform (a Broadcom product) integrates Anthropic's Claude as a model provider with governance controls (RBAC, rate limiting, review of agentic flows). This is the platform Broadcom GTO uses to govern internal coding assistants, so Claude is plausibly the model behind the internal dogfooding, but the source frames it as a product integration rather than naming Claude Code as the internal dev tool.",
+      "evidence": [
+        {
+          "claim": "Tanzu Platform's Spring 2025 release added Anthropic's Claude as a model provider, letting organizations proxy requests to Claude models with RBAC, rate limiting, and the ability to review interactions in agentic flows.",
+          "source_url": "https://news.broadcom.com/artificial-intelligence/vmware-tanzu-unlocks-genai-roi-for-the-enterprise-by-accelerating-the-delivery-of-agentic-applications",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": null,
+          "quote": "Tanzu Platform will be integrated with Anthropic's Claude LLM to enable direct proxy requests to Claude models with governance controls"
+        }
+      ]
+    }
+  ],
+  "notes": "STRONGEST SIGNAL: a Broadcom-owned news article (news.broadcom.com, dated ~2025-12-10) describing Broadcom's own IT/engineering org (Global Technology Organization, GTO) internally adopting agentic AI coding assistants for 'thousands of developers', governed via VMware Tanzu Platform + MCP, covering a ticket->code->PR workflow. This is genuine internal_dogfooding. CAVEAT: the article does NOT name the consumer-facing tool (no explicit Claude Code / Copilot / Cursor / Codex / Devin mention) - it describes 'AI coding assistants / agents' generically. Tanzu separately integrates Anthropic Claude as a model provider, making Claude a plausible (but unconfirmed) backend. The '5x developer productivity' figure appearing in Tanzu materials refers to Tanzu's PaaS push-to-prod workflow generally, NOT specifically to the AI coding-assistant rollout, so it should not be attributed to the coding agents. SIGNAL-vs-NOISE: Most Broadcom + AI hits are product/hardware noise: (1) Anthropic-Broadcom partnership = custom AI accelerator/chip manufacturing (hardware, not dev tooling); (2) VMware Cloud Foundation 9.0/9.1 'AI native', Tanzu Platform 10.3/10.4, Agent Foundations, Private AI = Broadcom selling AI infra/platform products (product_integration, not internal dev use); (3) Moveworks = internal IT helpdesk assistant (not code). SEARCHES RUN (~13): Copilot+Broadcom; Claude Code+Broadcom; Cursor+VMware; Hock Tan earnings AI coding; Amazon Q/Gemini CLI/Devin+Broadcom; Broadcom job postings AI assistant; internal dogfooding; Tanzu Copilot case study; engineering blog; GitHub Copilot enterprise case study (no results); rollout percent developers; CIO gen AI interview; GTO agentic transformation; Tanzu+Claude+internal. NOTHING credible found naming Copilot, Cursor, Codex/Operator, Amazon Q, Gemini CLI, Antigravity, Devin, Windsurf, or Cowork as Broadcom internal dev tools. The klover.ai 'Broadcom uses AI agents - 10 ways' pages are speculative SEO listicles and were treated as NON-evidence. WebFetch on news.broadcom.com returned HTTP 403, so article details/quotes come from WebSearch result snippets of that primary page; date (~2025-12-10) is from a search snippet and is approximate."
+}
