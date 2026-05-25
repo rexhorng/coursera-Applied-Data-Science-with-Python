@@ -1,0 +1,116 @@
+{
+  "company": "Alphabet / Google",
+  "company_key": "google",
+  "agent": "B_usage_analyst",
+  "no_usage_evidence": false,
+  "tool_usage": [
+    {
+      "tool_name": "Internal Gemini-powered code generation (monorepo / Cider; Pichai earnings stat)",
+      "how_used": ["developer workflow/IDE", "internal automation"],
+      "what_for": ["AI-generated new code that is then reviewed and accepted by engineers across Google's products"],
+      "teams": "Company-wide Google engineering (monorepo)",
+      "scale": ">25% of all new code AI-generated as of Q3 2024 per Pichai (directly attributable quote). Reported to rise to >30% (Q1 2025), ~50% (late 2025), ~75% (Q2 2026) - later figures from secondary/social reporting, treat as directional.",
+      "internal_vs_product": "internal_dev",
+      "supporting_source_urls": [
+        "https://thehill.com/policy/technology/4962336-google-ceo-says-more-than-25-percent-of-companys-new-code-written-by-ai/",
+        "https://fortune.com/2024/10/30/googles-code-ai-sundar-pichai/",
+        "https://www.fastcompany.com/91531519/google-ceo-says-75-of-the-companys-code-is-ai-generated"
+      ],
+      "confidence_note": "High confidence on the Q3 2024 >25% figure (consistent across outlets, exec quote). Later % figures lower confidence."
+    },
+    {
+      "tool_name": "Cider (internal IDE) + Critique (code review)",
+      "how_used": ["developer workflow/IDE", "code review"],
+      "what_for": ["AI autocomplete", "AI-suggested changelist (CL) descriptions", "AI input/suggestions on code reviews", "one-click ML-powered edit application on review comments", "in-IDE chat assistance"],
+      "teams": "Google engineering org-wide (Cider is the standard internal IDE; Critique is the standard code review tool)",
+      "scale": "97% reported engineer satisfaction with Critique; usage is org-wide but no precise seat count disclosed.",
+      "internal_vs_product": "internal_dev",
+      "supporting_source_urls": [
+        "https://read.engineerscodex.com/p/how-google-takes-the-pain-out-of",
+        "https://www.techradar.com/pro/google-issues-official-internal-guidance-on-using-ai-for-coding-and-its-devs-might-not-be-best-pleased"
+      ],
+      "confidence_note": "Medium-high. Cider/Critique existence and AI features well documented; some AI feature detail from secondary reporting on internal tools."
+    },
+    {
+      "tool_name": "Goose / Gemini for Google (internal coding assistant)",
+      "how_used": ["developer workflow/IDE", "internal automation"],
+      "what_for": ["code generation, debugging and optimization assistance for internal engineering, trained on Google's proprietary engineering knowledge"],
+      "teams": "Google engineering broadly; reportedly mandated for engineers",
+      "scale": "Reported daily-AI-usage expectations for engineers and a prohibition on unapproved third-party AI coding tools; no headcount/seat figure disclosed.",
+      "internal_vs_product": "internal_dev",
+      "supporting_source_urls": [
+        "https://contxto.com/en/artificial-intelligence/google-introduces-ai-powered-coding-assistant-goose/",
+        "https://sightsinplus.com/news/technology/google-mandates-use-of-internal-ai-models-for-coding-tasks/"
+      ],
+      "confidence_note": "Medium. Internal-mandate detail from secondary tech-press on leaked guidance. NOTE name collision with Block's unrelated open-source 'Goose'."
+    },
+    {
+      "tool_name": "AlphaEvolve (DeepMind)",
+      "how_used": ["internal automation", "other - autonomous algorithm discovery/optimization"],
+      "what_for": ["optimizing Borg data-center scheduling", "TPU design optimization", "kernel tiling and FlashAttention speedups", "open scientific/algorithmic problems"],
+      "teams": "Google DeepMind; deployed across Google's compute/infrastructure ecosystem",
+      "scale": "On average ~0.7% of Google's worldwide compute continuously recovered via the Borg heuristic; 23% kernel tiling and 32% FlashAttention speedups reported.",
+      "internal_vs_product": "both",
+      "supporting_source_urls": [
+        "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/",
+        "https://arxiv.org/abs/2506.13131",
+        "https://cloud.google.com/blog/products/ai-machine-learning/alphaevolve-on-google-cloud"
+      ],
+      "confidence_note": "High. Quantitative internal-deployment claims from DeepMind's own primary blog. Now also offered via Google Cloud (product), hence 'both'."
+    },
+    {
+      "tool_name": "Gemini CLI",
+      "how_used": ["developer workflow/IDE", "CI/CD", "internal automation"],
+      "what_for": ["terminal-based code refactoring, documentation generation, shell command execution, script running, file editing; extensible via MCP"],
+      "teams": "External developers (vendor product); internal Google use plausible but not specifically evidenced here",
+      "scale": "Free tier 60 req/min, 1000 req/day; usage figures not specified",
+      "internal_vs_product": "product_integration",
+      "supporting_source_urls": [
+        "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-cli-open-source-ai-agent/",
+        "https://techcrunch.com/2025/06/25/google-unveils-gemini-cli-an-open-source-ai-tool-for-terminals/"
+      ],
+      "confidence_note": "High on product existence/capabilities; this is a tool Google MAKES/ships, internal dogfooding not separately confirmed."
+    },
+    {
+      "tool_name": "Google Antigravity",
+      "how_used": ["developer workflow/IDE", "code review", "internal automation"],
+      "what_for": ["delegating complex multi-step coding tasks to autonomous agents; orchestrating up to 5 parallel agents (subagents in 2.0); cross-service audits/refactors"],
+      "teams": "External developers (vendor platform); model-agnostic (Gemini 3, Claude Sonnet/Opus, OpenAI open variant)",
+      "scale": "Free public preview; up to 5 parallel agents in v1; no internal-seat figures",
+      "internal_vs_product": "product_integration",
+      "supporting_source_urls": [
+        "https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/",
+        "https://en.wikipedia.org/wiki/Google_Antigravity",
+        "https://9to5google.com/2026/05/19/google-antigravity-agentic-developer-suite/"
+      ],
+      "confidence_note": "High on product. Tool Google MAKES; notably exposes third-party Claude/OpenAI models as options for external users."
+    },
+    {
+      "tool_name": "Jules",
+      "how_used": ["developer workflow/IDE", "internal automation", "CI/CD"],
+      "what_for": ["asynchronous autonomous tasks: reading codebase, planning, multi-file changes, writing tests, fixing bugs, opening GitHub PRs, environment snapshots"],
+      "teams": "External developers (vendor product, Google Labs)",
+      "scale": "~2.28M site visits and 140k+ publicly shared code improvements during beta; tiered pricing tied to Google AI subscriptions at GA",
+      "internal_vs_product": "product_integration",
+      "supporting_source_urls": [
+        "https://blog.google/innovation-and-ai/models-and-research/google-labs/jules/",
+        "https://techcrunch.com/2025/08/06/googles-ai-coding-agent-jules-is-now-out-of-beta/"
+      ],
+      "confidence_note": "High on product. Tool Google MAKES; usage metrics are external-developer adoption during beta."
+    },
+    {
+      "tool_name": "Gemini Code Assist",
+      "how_used": ["developer workflow/IDE", "code review"],
+      "what_for": ["code completion/generation, transformation/editing, code review agent, large-context bug tracing and onboarding-guide generation; agent mode"],
+      "teams": "External developers/enterprises (vendor product)",
+      "scale": "Google-run experiment: 2.5x higher odds of completing common dev tasks vs no assistance; supports up to 2M token context on Vertex AI",
+      "internal_vs_product": "product_integration",
+      "supporting_source_urls": [
+        "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-code-assist-updates-google-io-2025/",
+        "https://developers.google.com/gemini-code-assist/docs/overview"
+      ],
+      "confidence_note": "High on product. Commercial offering Google sells; the 2.5x figure is Google's own experiment metric."
+    }
+  ],
+  "notes": "Google is the dominant VENDOR_MAKER of agentic/AI coding tools (Gemini CLI, Antigravity, Jules, Gemini Code Assist) AND a heavy internal DOGFOODER (monorepo AI codegen behind Pichai's >25% stat, Cider/Critique, Goose/Gemini-for-Google, AlphaEvolve). The clearest internal-usage signals are: the Pichai >25% new-code-AI-generated earnings quote (Q3 2024), AlphaEvolve's quantified infrastructure deployment (~0.7% compute recovered), and Cider/Critique AI features. Reporting indicates Google engineers are restricted to internal tools and discouraged/prohibited from using unapproved THIRD-PARTY agentic tools (Copilot, Cursor, Claude Code, Codex), so no internal third-party-tool usage was evidenced. Where Antigravity exposes Anthropic/OpenAI models, that is a product feature for external developers, not internal Google engineering use. WebFetch was blocked (403) so usage details derive from WebSearch summaries; all URLs are real and appeared in search results."
+}
