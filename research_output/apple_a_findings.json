@@ -1,0 +1,147 @@
+{
+  "company": "Apple",
+  "ticker": "AAPL",
+  "company_key": "apple",
+  "research_date": "2026-05-25",
+  "agent": "A_evidence_finder",
+  "no_evidence_found": false,
+  "tools_found": [
+    {
+      "tool_name": "Claude Code / Claude Agent SDK (Anthropic)",
+      "tool_category": "agentic coding agent",
+      "signal_types": ["internal_dogfooding", "product_integration"],
+      "signal_summary": "Multiple independent sources indicate Apple uses Anthropic's Claude internally for development (including Claude Code, evidenced by leaked CLAUDE.md instruction files in the Apple Support app) and has integrated the Claude Agent SDK as a first-class agentic coding provider inside Xcode 26.3.",
+      "evidence": [
+        {
+          "claim": "Apple and Anthropic teamed up to build an internal AI-powered 'vibe-coding' platform based on Xcode and powered by Anthropic's Claude Sonnet, with a chat interface to request code, test UIs, and locate/fix bugs; Apple planned to roll it out internally first.",
+          "source_url": "https://www.bloomberg.com/news/articles/2025-05-02/apple-anthropic-team-up-to-build-ai-powered-vibe-coding-platform",
+          "source_type": "reputable_news",
+          "source_quality": "primary",
+          "date": "2025-05-02",
+          "quote": "Apple, Anthropic Team Up to Build AI-Powered 'Vibe-Coding' Platform"
+        },
+        {
+          "claim": "Coverage of the Bloomberg report: Apple's internal version of Xcode integrates Claude Sonnet with a chat interface for programmers to request code/help, can test user interfaces and help engineers locate and address bugs; Apple would roll it out internally and had not decided on public launch.",
+          "source_url": "https://www.macrumors.com/2025/05/02/apple-anthropic-ai-coding-platform/",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": "2025-05-02",
+          "quote": "The new system... is based on Apple's Xcode and powered by Anthropic's Claude Sonnet model."
+        },
+        {
+          "claim": "The Apple Support iOS app v5.13 accidentally shipped two CLAUDE.md instruction files (a Claude Code feature) revealing internal use of Anthropic's Claude Code; files described the support chat architecture (a 'Juno AI' automated system plus 'Live Agents' human support). Apple shipped emergency build 5.13.1 to remove them with no official comment.",
+          "source_url": "https://tech.yahoo.com/ai/claude/articles/apple-using-claude-inside-company-114500152.html",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": "2026-05-02",
+          "quote": "Apple Is Using Claude Inside the Company Workflow, Leaked Documents Show"
+        },
+        {
+          "claim": "MacRumors analyst Aaron Perris discovered the CLAUDE.md files by running grep across the Apple Support IPA on/around April 30, 2026 and posted screenshots on X; the files are the kind Claude Code reads at session start to set coding standards and architecture context.",
+          "source_url": "https://finance.biggo.com/news/202605020924_Apple_Leaks_Claude.md_in_Support_App",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": "2026-05-02",
+          "quote": "Apple Accidentally Ships Its Own Claude.md File in Support App, Revealing Widespread Internal AI Use"
+        },
+        {
+          "claim": "Hacker News discussion documenting the leak of CLAUDE.md files in the Apple Support app, corroborating the incident among the developer community.",
+          "source_url": "https://news.ycombinator.com/item?id=47973378",
+          "source_type": "forum",
+          "source_quality": "weak",
+          "date": "2026-05",
+          "quote": null
+        },
+        {
+          "claim": "Apple announced Xcode 26.3 'unlocks the power of agentic coding,' adding native integration of the Claude Agent SDK (the harness that powers Claude Code) and OpenAI Codex as first-class options in Xcode's Intelligence settings; agents can break down tasks, search docs, edit project settings, build, and verify work via Xcode Previews.",
+          "source_url": "https://www.apple.com/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": "2026-02",
+          "quote": "Xcode 26.3 introduces support for agentic coding, a new way in Xcode for developers to build apps using coding agents such as Anthropic's Claude Agent and OpenAI's Codex."
+        },
+        {
+          "claim": "Anthropic announced that Apple's Xcode supports the Claude Agent SDK, giving developers the full power of Claude Code (subagents, background tasks, plugins) inside the IDE; Apple worked with Anthropic to optimize token usage and tool-calling efficiency.",
+          "source_url": "https://www.anthropic.com/news/apple-xcode-claude-agent-sdk",
+          "source_type": "vendor_case_study",
+          "source_quality": "primary",
+          "date": "2026-02",
+          "quote": "Apple's Xcode now supports the Claude Agent SDK"
+        },
+        {
+          "claim": "Reporting that Apple hosts Claude instances on its own servers for tasks like prototype testing, code generation, design reviews, UI copy, and security automation.",
+          "source_url": "https://adam.holter.com/anthropic-hits-19b-arr-as-apple-runs-its-internal-dev-on-claude/",
+          "source_type": "reputable_news",
+          "source_quality": "weak",
+          "date": "2026",
+          "quote": "Apple hosts Claude instances on its own servers for tasks like prototype testing, code generation, design reviews, UI copy, and security automation."
+        }
+      ]
+    },
+    {
+      "tool_name": "OpenAI Codex",
+      "tool_category": "agentic coding agent",
+      "signal_types": ["product_integration"],
+      "signal_summary": "Apple integrated OpenAI's Codex as a first-class, one-click agentic coding provider in Xcode 26.3's Intelligence settings, alongside the Claude Agent SDK. This is product integration for developers using Xcode; no clear evidence of Apple's own engineers internally dogfooding Codex was found.",
+      "evidence": [
+        {
+          "claim": "Xcode 26.3 integrates OpenAI's Codex alongside Anthropic's Claude Agent as built-in agentic coding providers, working out of the box with one-click setup; both expose ~20 built-in Xcode tools.",
+          "source_url": "https://www.apple.com/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": "2026-02",
+          "quote": "coding agents such as Anthropic's Claude Agent and OpenAI's Codex"
+        },
+        {
+          "claim": "Coverage describing Apple integrating Anthropic's Claude and OpenAI's Codex into Xcode 26.3, letting AI agents autonomously write, build, and test code; Apple worked with both vendors to reduce token usage and improve tool calling.",
+          "source_url": "https://venturebeat.com/technology/apple-integrates-anthropics-claude-and-openais-codex-into-xcode-26-3-in-push",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": "2026-02",
+          "quote": "Apple integrates Anthropic's Claude and OpenAI's Codex into Xcode 26.3 in push for 'agentic coding'"
+        }
+      ]
+    },
+    {
+      "tool_name": "GitHub Copilot",
+      "tool_category": "AI code assistant",
+      "signal_types": [],
+      "signal_summary": "Apple restricted internal employee use of GitHub Copilot (and ChatGPT) in 2023 over data-leakage concerns. No evidence of Apple's own engineers using Copilot internally; Copilot is, separately, available to third-party developers in Xcode (a Microsoft/GitHub product, not Apple's use).",
+      "evidence": [
+        {
+          "claim": "Apple reportedly restricted internal use of AI-powered tools including ChatGPT and GitHub Copilot in May 2023, citing concerns that confidential code/data could leak to model providers.",
+          "source_url": "https://techcrunch.com/2023/05/19/apple-reportedly-limits-internal-use-of-ai-powered-tools-like-chatgpt-and-github-copilot/",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": "2023-05-19",
+          "quote": "Apple reportedly limits internal use of AI-powered tools like ChatGPT and GitHub Copilot"
+        },
+        {
+          "claim": "GitHub Copilot for Xcode brings agent-driven capabilities (Custom Agents, Subagents, Plan Mode) to developers building Apple-platform apps. This is a GitHub/Microsoft product available in Xcode, not evidence of Apple-internal use.",
+          "source_url": "https://devblogs.microsoft.com/xcode/github-copilot-for-xcode-unlocking-agentic-power-for-apple-developers/",
+          "source_type": "company_blog",
+          "source_quality": "credible_secondary",
+          "date": "2025",
+          "quote": "GitHub Copilot for Xcode: Unlocking Agentic Power for Apple Developers"
+        }
+      ]
+    },
+    {
+      "tool_name": "Cursor (third-party MCP agents)",
+      "tool_category": "agentic coding agent",
+      "signal_types": ["product_integration"],
+      "signal_summary": "Xcode 26.3 exposes its capabilities via the Model Context Protocol, so developers can connect any MCP-compatible agent (Cursor, Claude Code CLI, etc.) to Xcode's built-in tools. This is product enablement for external developers, not evidence of Apple-internal Cursor use.",
+      "evidence": [
+        {
+          "claim": "Xcode 26.3 makes its ~20 built-in tools available via the Model Context Protocol, allowing developers to connect Cursor, Claude Code CLI, or any MCP-compatible agent to Xcode.",
+          "source_url": "https://dev.to/arshtechpro/xcode-263-use-ai-agents-from-cursor-claude-code-beyond-4dmi",
+          "source_type": "reputable_news",
+          "source_quality": "weak",
+          "date": "2026-02",
+          "quote": "You can connect Cursor, Claude Code CLI, or literally anything that speaks MCP to Xcode's 20 built-in tools."
+        }
+      ]
+    }
+  ],
+  "notes": "Searches run (~13) covered: Claude Code + Apple, GitHub Copilot + Apple internal, Codex/Cursor/Devin + Apple, the Apple Support CLAUDE.md leak, the Apple-Anthropic 'vibe-coding'/Bloomberg report, the 2023 Copilot/ChatGPT ban, Xcode 26.3 agentic coding, and scale/seat figures. STRONGEST evidence: (1) Apple Newsroom + Anthropic announcements of Claude Agent SDK + Codex integration in Xcode 26.3 (primary, product integration); (2) Bloomberg (2025-05-02) on the internal Apple-Anthropic Xcode/Claude 'vibe-coding' platform; (3) the April 30, 2026 Apple Support app CLAUDE.md leak, widely reported (Yahoo, BigGo, HN, MacRumors analyst Aaron Perris), strongly implying internal Claude Code use. CAVEATS: WebFetch returned HTTP 403 on nearly every target URL (apple.com, anthropic.com, venturebeat, techcrunch, yahoo, dev.to, storyboard18, HN), so claims/quotes rely on WebSearch result summaries rather than full-page reads; quotes are headline/summary-level paraphrases, not always exact body text. The Bloomberg article was inferred from its title and secondary coverage (paywalled). The leak's 'Juno AI / Live Agents' detail concerns a customer-support backend, and CLAUDE.md presence confirms Claude Code tooling was used in that codebase. No evidence found of Apple internally using Devin, Windsurf, Amazon Q Developer, Gemini CLI, Antigravity, or Cowork. Apple is secretive; internal-use signals here are unusually strong for Apple due to the partnership reporting and the accidental leak, but exact scale/seat figures for Apple specifically were NOT found (the '70-90%' and Stripe '1,370 engineers' figures returned in search pertain to Anthropic/Stripe, not Apple)."
+}

@@ -1,0 +1,76 @@
+{
+  "company": "Apple",
+  "company_key": "apple",
+  "agent": "B_usage_analyst",
+  "no_usage_evidence": false,
+  "tool_usage": [
+    {
+      "tool_name": "Claude Code / Claude Agent SDK (Anthropic)",
+      "how_used": ["developer workflow/IDE", "product integration", "internal automation"],
+      "what_for": [
+        "Internal development on an Apple-Anthropic 'vibe-coding' platform built on Xcode + Claude Sonnet: requesting/generating code, testing user interfaces, locating and fixing bugs (Bloomberg, May 2025)",
+        "Internal use of Claude Code on the Apple Support app codebase, evidenced by leaked CLAUDE.md instruction files defining the support chat / 'Juno AI' + 'Live Agents' architecture (leak, Apr-May 2026)",
+        "Reported broader internal tasks: prototype testing, code generation, design reviews, UI copy, security automation (weaker, single-source)",
+        "Product integration: Claude Agent SDK (full Claude Code: subagents, background tasks, plugins) shipped as a built-in agentic provider in Xcode 26.3 for all developers (Feb 2026)"
+      ],
+      "teams": "Apple Support / customer-support engineering (CLAUDE.md leak); Xcode / developer-tools org (Xcode 26.3 integration, co-engineered with Anthropic). Broader org-wide internal use reported but specific teams largely unknown.",
+      "scale": "unknown for Apple specifically. No verified Apple seat/headcount/percentage figures were found. Search-surfaced figures like '70-90% of code' and 'Stripe 1,370 engineers' pertain to Anthropic/Stripe, NOT Apple, and should not be attributed to Apple.",
+      "internal_vs_product": "both",
+      "supporting_source_urls": [
+        "https://www.bloomberg.com/news/articles/2025-05-02/apple-anthropic-team-up-to-build-ai-powered-vibe-coding-platform",
+        "https://www.macrumors.com/2025/05/02/apple-anthropic-ai-coding-platform/",
+        "https://tech.yahoo.com/ai/claude/articles/apple-using-claude-inside-company-114500152.html",
+        "https://finance.biggo.com/news/202605020924_Apple_Leaks_Claude.md_in_Support_App",
+        "https://www.apple.com/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/",
+        "https://www.anthropic.com/news/apple-xcode-claude-agent-sdk",
+        "https://news.ycombinator.com/item?id=47973378"
+      ],
+      "confidence_note": "HIGH on the fact that Apple uses Claude/Claude Code internally and integrated the Claude Agent SDK into Xcode: corroborated by primary sources (Apple Newsroom, Anthropic) plus Bloomberg and a widely reported accidental leak. MEDIUM-LOW on the breadth of internal use (prototype testing, design reviews, security automation) which traces to a single weaker source. The product integration (Xcode 26.3) is solidly primary-sourced."
+    },
+    {
+      "tool_name": "OpenAI Codex",
+      "how_used": ["developer workflow/IDE", "product integration"],
+      "what_for": [
+        "Built-in agentic coding provider in Xcode 26.3 for third-party developers: autonomously writing, building, and testing code with one-click account setup; accessing Xcode's ~20 built-in tools via MCP"
+      ],
+      "teams": "Xcode / developer-tools org (integration co-optimized with OpenAI for token usage and tool calling).",
+      "scale": "unknown",
+      "internal_vs_product": "product_integration",
+      "supporting_source_urls": [
+        "https://www.apple.com/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/",
+        "https://venturebeat.com/technology/apple-integrates-anthropics-claude-and-openais-codex-into-xcode-26-3-in-push"
+      ],
+      "confidence_note": "HIGH that Codex is integrated into Xcode 26.3 as a first-class agent (primary Apple source). No evidence found that Apple's own engineers internally dogfood Codex; treated as product integration only."
+    },
+    {
+      "tool_name": "Cursor and other MCP-compatible agents",
+      "how_used": ["developer workflow/IDE", "product integration"],
+      "what_for": [
+        "Xcode 26.3 exposes its tools via Model Context Protocol so developers can connect Cursor, Claude Code CLI, or any MCP-compatible agent to drive Xcode"
+      ],
+      "teams": "unknown (developer-facing enablement, not Apple-internal use)",
+      "scale": "unknown",
+      "internal_vs_product": "product_integration",
+      "supporting_source_urls": [
+        "https://dev.to/arshtechpro/xcode-263-use-ai-agents-from-cursor-claude-code-beyond-4dmi"
+      ],
+      "confidence_note": "MEDIUM. Xcode's MCP openness to third-party agents like Cursor is well-reported, but this is developer enablement, not evidence that Apple engineers use Cursor internally."
+    },
+    {
+      "tool_name": "GitHub Copilot",
+      "how_used": ["other - restricted/banned for internal employee use"],
+      "what_for": [
+        "Not used internally by Apple employees: restricted since May 2023 over data-leakage concerns. (Copilot for Xcode exists as a GitHub/Microsoft product for external developers.)"
+      ],
+      "teams": "unknown",
+      "scale": "unknown",
+      "internal_vs_product": "vendor_only",
+      "supporting_source_urls": [
+        "https://techcrunch.com/2023/05/19/apple-reportedly-limits-internal-use-of-ai-powered-tools-like-chatgpt-and-github-copilot/",
+        "https://devblogs.microsoft.com/xcode/github-copilot-for-xcode-unlocking-agentic-power-for-apple-developers/"
+      ],
+      "confidence_note": "MEDIUM-HIGH on the 2023 internal restriction (multiple outlets). It is unclear whether the restriction was relaxed after Apple's 2025 pivot to Anthropic's Claude; no evidence of internal Copilot use was found."
+    }
+  ],
+  "notes": "Apple's internal use centers on Anthropic's Claude / Claude Code (strongest, multi-source signal, including the accidental Apple Support app CLAUDE.md leak), plus a co-built internal Xcode+Claude 'vibe-coding' platform reported by Bloomberg in May 2025. As of Xcode 26.3 (Feb 2026), Apple ships both the Claude Agent SDK and OpenAI Codex as first-class agentic coding providers and opens Xcode to any MCP agent (e.g., Cursor) for third-party developers. Apple historically banned GitHub Copilot/ChatGPT internally (2023). Key caveat: no verified Apple-specific scale/seat/percentage figures were found, and WebFetch was blocked (HTTP 403) on nearly all target pages, so details rest on WebSearch result summaries; quotes are paraphrase/headline-level. Bloomberg article is paywalled and inferred via title + secondary coverage. No evidence of internal Apple use of Devin, Windsurf, Amazon Q Developer, Gemini CLI, Antigravity, or Cowork."
+}
