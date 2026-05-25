@@ -1,0 +1,70 @@
+{
+  "company": "NVIDIA",
+  "company_key": "nvidia",
+  "agent": "B_usage_analyst",
+  "no_usage_evidence": false,
+  "tool_usage": [
+    {
+      "tool_name": "Cursor",
+      "how_used": ["developer workflow/IDE", "code review", "CI/CD", "internal automation"],
+      "what_for": [
+        "writing/generating code across essentially all product areas",
+        "code reviews",
+        "generating test cases and QA",
+        "finding and fixing rare/persistent bugs (context pulled from tickets/docs via MCP servers, then Cursor implements fixes and runs tests)",
+        "automating git flow via custom rules: branch creation, commits, CI debugging, issue tracking",
+        "semantic search/reasoning over large repositories to reduce time re-learning how systems fit together"
+      ],
+      "teams": "Company-wide engineering org including software engineers and chip designers; specific named team leads referenced in the Cursor case study (Theuring's team for git-flow automation; Luo's team for automated bug fixing). Otherwise org-wide.",
+      "scale": "Over 30,000 developers using Cursor daily per the official Cursor case study; Jensen Huang publicly states ~40,000 / 100% of NVIDIA engineers. Reported 3x increase in committed code with bug rates flat and improved code-style consistency. (Figures are vendor/CEO-sourced; 30k vs 40k differ by source.)",
+      "internal_vs_product": "internal_dev",
+      "supporting_source_urls": [
+        "https://cursor.com/blog/nvidia",
+        "https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-now-produces-three-times-as-much-code-as-before-ai-specialized-version-of-cursor-is-being-used-by-over-30-000-nvidia-engineers-internally",
+        "https://techstartups.com/2025/10/09/nvidias-ceo-endorses-cursor-100-of-our-engineers-now-code-with-ai/",
+        "https://dataconomy.com/2025/10/15/jensen-huang-says-every-nvidia-engineer-now-codes-with-cursor/"
+      ],
+      "confidence_note": "High confidence on existence and broad internal use (official vendor case study + repeated CEO public statements). Specific HOW/WHAT-FOR detail (code review, test generation, git/CI automation, MCP-based bug fixing) is solid and comes from the Cursor case study; productivity numbers (3x, 30k/40k) are vendor/CEO-sourced and should be treated as directional rather than independently audited."
+    },
+    {
+      "tool_name": "OpenAI Codex",
+      "how_used": ["developer workflow/IDE", "internal automation", "product integration", "code review"],
+      "what_for": [
+        "default tool for complex engineering work",
+        "running end-to-end machine learning experiments (identifying research areas, writing experiment scripts, running experiments on remote machines)",
+        "evolving an internal platform from MVP to production-ready (scalability/reliability)",
+        "building internal apps quickly (e.g., an internal podcast-recording app similar to Riverside, built in hours)",
+        "multi-file refactors and complex experiments run overnight; shipping features from natural-language prompts",
+        "autonomous build-and-test using the Codex desktop app with computer interaction",
+        "surfacing bugs/gaps other models missed"
+      ],
+      "teams": "Over 10,000 NVIDIANs across engineering, product, legal, marketing, finance, sales, HR, operations and developer programs; research teams specifically for the automated ML research loop.",
+      "scale": "Over 10,000 employees with Codex access (NVIDIA blog / OpenAI case study / reputable news). Debugging cycles reported shrinking from days to hours. Runs on NVIDIA GB200/GB300 (Blackwell) infrastructure (reported 50x efficiency / 35x cost reduction). Figures are vendor/CEO-sourced.",
+      "internal_vs_product": "both",
+      "supporting_source_urls": [
+        "https://openai.com/index/nvidia/",
+        "https://blogs.nvidia.com/blog/openai-codex-gpt-5-5-ai-agents/",
+        "https://www.benzinga.com/markets/tech/26/04/52022856/nvidia-deploys-openais-codex-across-10000-employees-as-jensen-huang-hails-age-of-ai-sam-altman-says-it-was-awesome",
+        "https://finance.yahoo.com/sectors/technology/articles/nvidia-deploys-openais-codex-across-113126868.html"
+      ],
+      "confidence_note": "High confidence: corroborated by an official OpenAI case study, NVIDIA's own corporate blog, and multiple reputable financial-news outlets. Strong HOW/WHAT-FOR detail (ML research loop automation, internal platform/app builds, autonomous test). 'Both' because NVIDIA dogfoods Codex internally AND Codex runs in production on NVIDIA Blackwell hardware (infrastructure/product partnership)."
+    },
+    {
+      "tool_name": "Claude Code",
+      "how_used": ["developer workflow/IDE", "product integration"],
+      "what_for": [
+        "AI-assisted/agentic software engineering alongside Codex and Cursor (per CEO; specific Claude-Code-only tasks not detailed)",
+        "product integration: usable with NVIDIA NIM as an inference backend"
+      ],
+      "teams": "unknown (CEO framing is company-wide '100% of NVIDIA'; no Claude-Code-specific team breakdown found)",
+      "scale": "unknown for Claude Code specifically. Huang's GTC 2026 keynote states 100% of NVIDIA uses a combination of (often all three) Claude Code, Codex and Cursor, but does not give a Claude-Code-specific headcount.",
+      "internal_vs_product": "both",
+      "supporting_source_urls": [
+        "https://www.techloy.com/nvidia-gtc-2026-everything-jensen-huang-announced-at-the-keynote/",
+        "https://docs.nvidia.com/nim/large-language-models/latest/ai-assistant-integrations/claude-code.html"
+      ],
+      "confidence_note": "Moderate/weak on internal use. The internal-use claim rests on a single keynote statement grouping Claude Code with Codex and Cursor; no dedicated Anthropic-customer case study naming NVIDIA's internal Claude Code usage, teams, or scale was found. The Claude Code + NVIDIA NIM page is a documented product integration (Claude Code can use NIM as backend), which is distinct from internal dogfooding. Treat Claude-Code-specific HOW/WHAT-FOR as largely unknown."
+    }
+  ],
+  "notes": "Real, specific HOW/WHAT-FOR usage detail was obtainable for Cursor and OpenAI Codex (developer workflow, code review, test generation, debugging, git/CI automation, ML experiment automation, internal app/platform builds), backed by official vendor case studies plus NVIDIA's own blog and reputable news. Claude Code is confirmed as in-use by CEO statement but lacks tool-specific usage detail; it is also a NIM product integration. No NVIDIA-specific usage evidence was found for GitHub Copilot, Amazon Q Developer, Windsurf, Devin, Gemini CLI, or Google Antigravity. All scale/productivity figures (30k/40k engineers, 3x code, 10k Codex users) are vendor- or CEO-sourced and not independently audited, so treat as directional."
+}

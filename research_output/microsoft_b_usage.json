@@ -1,0 +1,92 @@
+{
+  "company": "Microsoft",
+  "company_key": "microsoft",
+  "agent": "B_usage_analyst",
+  "no_usage_evidence": false,
+  "tool_usage": [
+    {
+      "tool_name": "GitHub Copilot coding agent (CCA) in dotnet/runtime",
+      "how_used": ["developer workflow/IDE", "code review", "CI/CD", "internal automation"],
+      "what_for": [
+        "Assigning GitHub issues to Copilot, which plans the work, opens a PR, writes code, and runs tests",
+        "Code maintenance, modernization, and large-scale refactors",
+        "Fixing bugs and improving CI/CD pipeline stability",
+        "Automatic AI-powered code review on every PR in the repo (human-, CCA-, and external-authored)"
+      ],
+      "teams": ".NET team (dotnet/runtime open-source repository: .NET runtime, GC, JIT, AOT toolchain, core libraries; C#/C++/assembly)",
+      "scale": "878 CCA pull requests over ~10 months, 535 merged, 67.9% success rate; experiment began the day CCA launched publicly (May 2025). Figures from Microsoft's own .NET blog (primary, single post).",
+      "internal_vs_product": "internal_dev",
+      "supporting_source_urls": [
+        "https://devblogs.microsoft.com/dotnet/ten-months-with-cca-in-dotnet-runtime/"
+      ],
+      "confidence_note": "High confidence; primary Microsoft devblog with explicit quantified outcomes, though numbers come from a single self-reported post."
+    },
+    {
+      "tool_name": "GitHub Copilot coding agent in github.com core repository",
+      "how_used": ["developer workflow/IDE", "internal automation", "CI/CD", "code review"],
+      "what_for": [
+        "Human engineers assign issues to @Copilot, which opens PRs and completes the work",
+        "Tedious/repetitive tasks: fixing 161 typos across 100 files in one PR",
+        "Removing deprecated feature flags; cleaning up conditional logic, stale code, and old tests",
+        "Database schema/column-type migrations",
+        "Patching production bugs and improving CI/CD pipeline stability (e.g., NoMethodError fixes, caching error-masking fixes)"
+      ],
+      "teams": "GitHub engineering (core repository used to build github.com)",
+      "scale": "Based on analysis of one month of Copilot-authored PRs in GitHub's core repo; described qualitatively as 'a prolific engineer.' No headcount/seat or percentage figure published in the post.",
+      "internal_vs_product": "internal_dev",
+      "supporting_source_urls": [
+        "https://github.blog/ai-and-ml/github-copilot/how-copilot-helps-build-the-github-platform/"
+      ],
+      "confidence_note": "High confidence on tasks/use cases (primary GitHub blog, Nov 12 2025); scale is qualitative rather than a hard number."
+    },
+    {
+      "tool_name": "GitHub Copilot CLI (internal standardization)",
+      "how_used": ["developer workflow/IDE", "internal automation"],
+      "what_for": [
+        "Agentic command-line coding workflows (long-running sessions iterating through tests, files, and commands)",
+        "Becoming Microsoft's single internal agentic CLI, replacing Claude Code"
+      ],
+      "teams": "Experiences + Devices org (engineers on Windows, M365, Teams, Outlook, Surface)",
+      "scale": "Reporting describes 'thousands of engineers' being moved off Claude Code onto Copilot CLI with a June 30, 2026 deadline. Figure is from journalism citing internal communications; treat as approximate.",
+      "internal_vs_product": "internal_dev",
+      "supporting_source_urls": [
+        "https://newsletter.pragmaticengineer.com/p/microsoft-ai-dev-tools",
+        "https://winbuzzer.com/2026/05/15/microsoft-starts-canceling-claude-code-licenses-xcxwbn/",
+        "https://www.developer-tech.com/news/microsoft-claude-code-github-copilot-cli/"
+      ],
+      "confidence_note": "Medium-high; multiple credible outlets plus Pragmatic Engineer corroborate, but scale/teams rely on internal-memo reporting, not an official Microsoft statement."
+    },
+    {
+      "tool_name": "Anthropic Claude Code (being phased out internally)",
+      "how_used": ["developer workflow/IDE", "internal automation"],
+      "what_for": [
+        "Agentic CLI-based software development by Microsoft engineers (reportedly the more popular internal tool before the mandated switch)"
+      ],
+      "teams": "Experiences + Devices org (Windows, M365, Teams, Outlook, Surface)",
+      "scale": "Widely adopted internally per reporting; most internal licenses being canceled by June 30, 2026. No exact seat count published.",
+      "internal_vs_product": "internal_dev",
+      "supporting_source_urls": [
+        "https://winbuzzer.com/2026/05/15/microsoft-starts-canceling-claude-code-licenses-xcxwbn/",
+        "https://newsletter.pragmaticengineer.com/p/microsoft-ai-dev-tools"
+      ],
+      "confidence_note": "Medium; existence and popularity of internal Claude Code use is reported by multiple outlets, but precise scale is unquantified and based on internal-memo journalism."
+    },
+    {
+      "tool_name": "Anthropic Claude models in Copilot Studio / Foundry / GitHub Copilot",
+      "how_used": ["product integration"],
+      "what_for": [
+        "Selectable models for building, orchestrating, and managing agents in Copilot Studio (advanced reasoning, workflow automation)",
+        "Claude Sonnet 4 / Opus 4.1 in Copilot Studio; Claude Opus 4.6 in Foundry and rolling out across GitHub Copilot"
+      ],
+      "teams": "Microsoft Copilot / Copilot Studio / Foundry product teams (customer-facing offering)",
+      "scale": "Available by default in most geographies as of Jan 6, 2026 (EU/UK/EFTA require admin opt-in). Customer-facing, not an internal-headcount metric.",
+      "internal_vs_product": "product_integration",
+      "supporting_source_urls": [
+        "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/anthropic-joins-the-multi-model-lineup-in-microsoft-copilot-studio/",
+        "https://www.eweek.com/news/claude-opus-4-6-microsoft-foundry-github-copilot/"
+      ],
+      "confidence_note": "High confidence; primary Microsoft Copilot blog plus corroborating coverage. This is product integration, not internal dev usage."
+    }
+  ],
+  "notes": "Best HOW/WHAT-FOR detail comes from two primary dogfooding sources: dotnet/runtime (878 PRs, 535 merged, 67.9% success; refactors, bug fixes, AI code review on every PR) and the github.com core repo (typo cleanups, feature-flag removal, schema migrations, CI/CD and production bug patches). Internal Copilot CLI standardization and the Claude Code phase-out (Experiences + Devices, June 30 2026) are well-reported but scale figures ('thousands of engineers') come from internal-memo journalism, not official Microsoft data, so they are caveated. Anthropic-model availability inside Copilot/Studio/Foundry is product integration, distinct from internal dev usage. Microsoft is also the vendor/maker of all GitHub Copilot capabilities. No credible evidence of internal Microsoft standardization on Cursor, Windsurf, or Devin was found."
+}

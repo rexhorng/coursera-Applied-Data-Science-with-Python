@@ -1,0 +1,115 @@
+{
+  "company": "Microsoft",
+  "ticker": "MSFT",
+  "company_key": "microsoft",
+  "research_date": "2026-05-25",
+  "agent": "A_evidence_finder",
+  "no_evidence_found": false,
+  "tools_found": [
+    {
+      "tool_name": "GitHub Copilot (incl. coding agent / agent mode / Copilot CLI)",
+      "tool_category": "agentic coding agent",
+      "signal_types": ["vendor_maker", "internal_dogfooding", "product_integration"],
+      "signal_summary": "Microsoft owns GitHub and ships GitHub Copilot, including the autonomous Copilot coding agent (GA 2025). Microsoft and GitHub also extensively dogfood Copilot on their own flagship codebases (github.com core repo and dotnet/runtime), and are consolidating internal engineers onto Copilot CLI.",
+      "evidence": [
+        {
+          "claim": "Microsoft/GitHub is the vendor of GitHub Copilot and announced an enterprise-ready autonomous coding agent at Build 2025; Copilot Chat in VS Code was open-sourced and agent mode extended to JetBrains, Eclipse, and Xcode.",
+          "source_url": "https://github.com/newsroom/press-releases/coding-agent-for-github-copilot",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": "2025-05",
+          "quote": null
+        },
+        {
+          "claim": "Copilot coding agent became generally available; users assign a GitHub issue to Copilot and it plans the work, opens a pull request, writes code, runs tests, and requests review.",
+          "source_url": "https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": "2025-05",
+          "quote": "You assign Copilot an issue and it plans the work, opens a pull request, writes the code, runs the tests, and then asks for your review."
+        },
+        {
+          "claim": "GitHub dogfoods Copilot in its own core repository used to build github.com; @Copilot is assigned issues by human engineers, opens PRs, and handles tedious tasks such as fixing 161 typos across 100 files in a single PR, removing deprecated feature flags, cleaning up stale code/tests, schema migrations, and patching CI/CD and production bugs.",
+          "source_url": "https://github.blog/ai-and-ml/github-copilot/how-copilot-helps-build-the-github-platform/",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": "2025-11-12",
+          "quote": "In one pull request, @Copilot was assigned to fix 161 typos in comments and documentation strings across 100 different files."
+        },
+        {
+          "claim": "Microsoft's .NET team ran a ten-month dogfooding experiment with Copilot Coding Agent (CCA) in the dotnet/runtime repository, reporting 878 CCA pull requests, 535 merged, a 67.9% success rate; every PR in the repo also gets automatic AI-powered code review. The experiment began the day CCA launched publicly (May 2025).",
+          "source_url": "https://devblogs.microsoft.com/dotnet/ten-months-with-cca-in-dotnet-runtime/",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": "2026-03",
+          "quote": "878 CCA pull requests (535 merged, 67.9% success rate)"
+        },
+        {
+          "claim": "Microsoft is consolidating internal engineers onto GitHub Copilot CLI as its single agentic command-line tool, shaped jointly with GitHub.",
+          "source_url": "https://newsletter.pragmaticengineer.com/p/microsoft-ai-dev-tools",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": "2026-05",
+          "quote": null
+        },
+        {
+          "claim": "Microsoft CEO Satya Nadella stated that 20%-30% of code in Microsoft's repositories is now written by AI/software (varying by language), made in conversation with Mark Zuckerberg at Meta's LlamaCon, April 2025.",
+          "source_url": "https://www.cnbc.com/2025/04/29/satya-nadella-says-as-much-as-30percent-of-microsoft-code-is-written-by-ai.html",
+          "source_type": "exec_quote",
+          "source_quality": "credible_secondary",
+          "date": "2025-04-29",
+          "quote": "Maybe 20%, 30% of the code that is inside of our repos today and some of our projects are probably all written by software."
+        },
+        {
+          "claim": "Corroborating coverage of Nadella's up-to-30% AI-written code figure stated at LlamaCon, April 2025.",
+          "source_url": "https://techcrunch.com/2025/04/29/microsoft-ceo-says-up-to-30-of-the-companys-code-was-written-by-ai/",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": "2025-04-29",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "tool_name": "Anthropic Claude (Claude Code; Claude models in Copilot / Copilot Studio / Foundry)",
+      "tool_category": "agentic coding agent",
+      "signal_types": ["internal_dogfooding", "product_integration"],
+      "signal_summary": "Microsoft engineers (Experiences + Devices org) had widely adopted Anthropic's Claude Code internally, but Microsoft is canceling most internal Claude Code licenses by June 30, 2026 in favor of Copilot CLI. Separately, Microsoft ships Anthropic Claude models as a product integration inside Copilot Studio, Microsoft Foundry, and GitHub Copilot.",
+      "evidence": [
+        {
+          "claim": "Microsoft is canceling most internal Claude Code licenses and directing engineers in the Experiences + Devices group (Windows, M365, Teams, Outlook, Surface) to move to GitHub Copilot CLI by June 30, 2026 (end of fiscal year); reporting indicates Claude Code had become the more popular tool among Microsoft's own developers.",
+          "source_url": "https://winbuzzer.com/2026/05/15/microsoft-starts-canceling-claude-code-licenses-xcxwbn/",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": "2026-05-15",
+          "quote": null
+        },
+        {
+          "claim": "Microsoft's internal shift away from Claude Code toward Copilot CLI is described as driven by toolchain unification, cost/fiscal-year timing, and development control; Anthropic models remain accessible via Copilot CLI and the Foundry agreement continues.",
+          "source_url": "https://www.developer-tech.com/news/microsoft-claude-code-github-copilot-cli/",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": "2026-05",
+          "quote": null
+        },
+        {
+          "claim": "Anthropic Claude models (Claude Sonnet 4, Claude Opus 4.1) were added to Microsoft Copilot Studio as selectable models for building/orchestrating agents; by Jan 6, 2026 available by default in most geographies (EU/UK/EFTA require admin opt-in).",
+          "source_url": "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/anthropic-joins-the-multi-model-lineup-in-microsoft-copilot-studio/",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": "2025-09-24",
+          "quote": "With more options and control over model selection, we empower you to choose the best model for your use case."
+        },
+        {
+          "claim": "Anthropic's Claude Opus 4.6 is available within Microsoft's AI ecosystem, including Microsoft Foundry and rolling out across GitHub Copilot.",
+          "source_url": "https://www.eweek.com/news/claude-opus-4-6-microsoft-foundry-github-copilot/",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": "2026",
+          "quote": null
+        }
+      ]
+    }
+  ],
+  "notes": "Microsoft is simultaneously a VENDOR/MAKER (owns GitHub Copilot, ships agent mode/coding agent/Copilot CLI), an INTERNAL DOGFOODER (GitHub core repo + dotnet/runtime have hard, published numbers; broader Microsoft engineering used Claude Code heavily and is migrating to Copilot CLI), and a PRODUCT INTEGRATOR (ships Anthropic and OpenAI models inside Copilot/Copilot Studio/Foundry). STRONGEST EVIDENCE: the dotnet/runtime '878 PRs / 535 merged / 67.9%' devblog (primary) and the github.com-core-repo dogfooding blog (primary). The Nadella '20-30% of code written by AI' figure is from LlamaCon April 2025 (NOT an earnings call) and is a single high-profile exec quote treated as credible_secondary. The Claude Code license cancellation (June 30, 2026 deadline; Experiences + Devices) is reported by multiple tech outlets and the Pragmatic Engineer newsletter; treated as credible_secondary since it relies on internal-memo reporting rather than a Microsoft press release. Several authoritative URLs (CNBC, TechCrunch, GitHub blog, Microsoft devblog) returned HTTP 403 to direct fetch; their content was captured via search-engine result summaries, so exact verbatim quotes for some primary sources may be approximate. No credible company-specific evidence found of Microsoft engineers internally standardizing on Cursor, Windsurf, or Devin (only generic comparison listicles, which were disregarded). Search coverage: ~9 web searches across exec quotes, dogfooding, license transition, product integration, and competitor tools."
+}

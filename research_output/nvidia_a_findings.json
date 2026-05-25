@@ -1,0 +1,115 @@
+{
+  "company": "NVIDIA",
+  "ticker": "NVDA",
+  "company_key": "nvidia",
+  "research_date": "2026-05-25",
+  "agent": "A_evidence_finder",
+  "no_evidence_found": false,
+  "tools_found": [
+    {
+      "tool_name": "Cursor",
+      "tool_category": "agentic coding agent",
+      "signal_types": ["internal_dogfooding"],
+      "signal_summary": "NVIDIA deployed a customized version of Cursor to its engineering org; the official Cursor case study and NVIDIA CEO Jensen Huang state that all ~30,000-40,000 NVIDIA software engineers use it, with internal code commits tripling.",
+      "evidence": [
+        {
+          "claim": "Over 30,000 NVIDIA developers use Cursor daily, driving a 3x increase in committed code; NVIDIA customized Cursor for its workflows and extended it across the SDLC (code generation, code review, test-case generation, QA, debugging). Bug rates stayed flat while code style consistency improved.",
+          "source_url": "https://cursor.com/blog/nvidia",
+          "source_type": "vendor_case_study",
+          "source_quality": "primary",
+          "date": null,
+          "quote": "NVIDIA commits 3x more code across 30,000 developers with Cursor"
+        },
+        {
+          "claim": "A specialized version of Cursor is used by over 30,000 NVIDIA engineers internally; NVIDIA now produces roughly three times as much code as before AI. Teams use custom rules to automate git flow (branch creation, commits, CI debugging, issue tracking).",
+          "source_url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-now-produces-three-times-as-much-code-as-before-ai-specialized-version-of-cursor-is-being-used-by-over-30-000-nvidia-engineers-internally",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": null,
+          "quote": null
+        },
+        {
+          "claim": "Jensen Huang publicly endorsed Cursor, stating that 100% of NVIDIA's engineers (around 40,000) now code with AI via Cursor, and called Cursor his favorite enterprise AI service.",
+          "source_url": "https://techstartups.com/2025/10/09/nvidias-ceo-endorses-cursor-100-of-our-engineers-now-code-with-ai/",
+          "source_type": "exec_quote",
+          "source_quality": "credible_secondary",
+          "date": "2025-10-09",
+          "quote": "100% of our engineers now code with AI"
+        },
+        {
+          "claim": "Jensen Huang said every NVIDIA engineer (some 40,000) is now assisted by AI through Cursor and that productivity has gone up; he urged staff to keep using AI tools even when they fall short.",
+          "source_url": "https://dataconomy.com/2025/10/15/jensen-huang-says-every-nvidia-engineer-now-codes-with-cursor/",
+          "source_type": "exec_quote",
+          "source_quality": "credible_secondary",
+          "date": "2025-10-15",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "tool_name": "OpenAI Codex",
+      "tool_category": "agentic coding agent",
+      "signal_types": ["internal_dogfooding", "product_integration"],
+      "signal_summary": "Over 10,000 NVIDIANs across engineering, research and business functions use GPT-5.5-powered Codex as a default tool for complex engineering and to automate the ML research loop. Codex also runs in production on NVIDIA GB200/GB300 (Blackwell) infrastructure, making this both internal use and a product/infrastructure partnership.",
+      "evidence": [
+        {
+          "claim": "Over 10,000 NVIDIANs across engineering, product, legal, marketing, finance, sales, HR, operations and developer programs use GPT-5.5-powered Codex. Engineers use it as the default tool for complex engineering work and to run end-to-end ML experiments; one senior engineer evolved an internal platform from MVP to production and a team built an internal podcast app in hours. Codex automated parts of the research loop. Debugging cycles shrank from days to hours.",
+          "source_url": "https://openai.com/index/nvidia/",
+          "source_type": "vendor_case_study",
+          "source_quality": "primary",
+          "date": null,
+          "quote": "didn't have to do anything—it was built and tested completely autonomously"
+        },
+        {
+          "claim": "NVIDIA's blog announces GPT-5.5-powered Codex running on NVIDIA infrastructure (GB200/GB300, Blackwell) and describes NVIDIA's own use of Codex agents.",
+          "source_url": "https://blogs.nvidia.com/blog/openai-codex-gpt-5-5-ai-agents/",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": null,
+          "quote": null
+        },
+        {
+          "claim": "NVIDIA deployed OpenAI's Codex across more than 10,000 employees; Jensen Huang wrote in an internal email 'Agents do work. Let's jump to lightspeed. Welcome to the age of AI,' and Sam Altman said 'it was awesome.'",
+          "source_url": "https://www.benzinga.com/markets/tech/26/04/52022856/nvidia-deploys-openais-codex-across-10000-employees-as-jensen-huang-hails-age-of-ai-sam-altman-says-it-was-awesome",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": "2026-04",
+          "quote": "Agents do work. Let's jump to lightspeed. Welcome to the age of AI."
+        },
+        {
+          "claim": "OpenAI deployed GPT-5.5 Codex across NVIDIA Blackwell systems, reported as a 50x efficiency boost and 35x cost reduction.",
+          "source_url": "https://www.techradar.com/pro/it-was-awesome-to-see-it-work-openai-deploys-gpt-5-5-codex-across-nvidia-blackwell-systems-50x-efficiency-boost-and-35x-cost-reduction-makes-ai-viable-at-enterprise-scale",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": null,
+          "quote": null
+        }
+      ]
+    },
+    {
+      "tool_name": "Claude Code",
+      "tool_category": "agentic coding agent",
+      "signal_types": ["internal_dogfooding", "product_integration"],
+      "signal_summary": "Internal-use signal rests on Jensen Huang's GTC 2026 keynote statement that 100% of NVIDIA uses a combination of (often all three) Claude Code, Codex and Cursor. Separately, NVIDIA documents Claude Code as a product integration with NVIDIA NIM (Claude Code can use NIM as a backend). Internal-use detail (teams/scale specific to Claude Code) is thin versus Cursor/Codex.",
+      "evidence": [
+        {
+          "claim": "At his GTC 2026 keynote, Jensen Huang said 100% of NVIDIA is using a combination of, or often all three of, Claude Code, Codex and Cursor, and that no software engineer today is unassisted by AI agents.",
+          "source_url": "https://www.techloy.com/nvidia-gtc-2026-everything-jensen-huang-announced-at-the-keynote/",
+          "source_type": "exec_quote",
+          "source_quality": "credible_secondary",
+          "date": "2026-03-16",
+          "quote": "100% of NVIDIA is using a combination of, or oftentimes all three of them, Claude Code, Codex, and Cursor"
+        },
+        {
+          "claim": "NVIDIA documents how to use Claude Code with NVIDIA NIM, where Claude Code uses NIM as its backend via the Anthropic-compatible /v1/messages endpoint (product integration, not necessarily internal dev use).",
+          "source_url": "https://docs.nvidia.com/nim/large-language-models/latest/ai-assistant-integrations/claude-code.html",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": null,
+          "quote": null
+        }
+      ]
+    }
+  ],
+  "notes": "Search coverage: ~12 web searches covering Copilot, Cursor, Claude Code, Codex, Devin, Amazon Q, Windsurf, job postings, GTC, and earnings/exec quotes. STRONGEST evidence is for Cursor (official Cursor case study + multiple Huang public quotes) and OpenAI Codex (official OpenAI case study + NVIDIA's own blog + reputable news on the 10,000-employee rollout). Claude Code internal-use evidence is weaker: it derives mainly from Huang's GTC 2026 keynote naming all three tools together; no dedicated Anthropic case study naming NVIDIA's internal Claude Code teams/scale was found (the Claude Code + NIM page is a product integration). NO credible NVIDIA-specific internal-use evidence was found for GitHub Copilot, Amazon Q Developer, Windsurf, Devin, Gemini CLI, or Antigravity; Copilot results were ecosystem/product-integration noise (JFrog, jetson-copilot, NIM provider) and Microsoft-internal stories, not NVIDIA dogfooding. CAVEATS: Vendor case-study pages (cursor.com, openai.com) and several news pages returned HTTP 403 to direct fetch, so figures rely on search-result extracts and corroborating secondary sources; multiple sources agree on the 30,000 (Cursor case study)/~40,000 (Huang) engineer figures and 3x code metric, and on the 10,000-employee Codex rollout. The 30,000 vs 40,000 discrepancy likely reflects Cursor-specific developer count vs Huang's total-engineer framing."
+}
