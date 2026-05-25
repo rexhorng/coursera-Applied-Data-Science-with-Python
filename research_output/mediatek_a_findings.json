@@ -1,0 +1,99 @@
+{
+  "company": "MediaTek",
+  "ticker": "2454.TW",
+  "company_key": "mediatek",
+  "research_date": "2026-05-25",
+  "agent": "A_evidence_finder",
+  "no_evidence_found": false,
+  "tools_found": [
+    {
+      "tool_name": "MediaTek DaVinci (達哥) internal generative-AI platform + GPT-4 / Azure OpenAI IDE integration",
+      "tool_category": "AI code assistant",
+      "signal_types": ["internal_dogfooding"],
+      "signal_summary": "MediaTek built its own internal generative-AI platform 'DaVinci/達哥' on Microsoft Azure OpenAI (GPT-4) and integrated GPT-4 directly into its software-development IDE to provide code suggestion, code generation, and automatic error-fixing for engineers. Internal adoption is reported at 97% of employees with 88% reporting productivity gains.",
+      "evidence": [
+        {
+          "claim": "MediaTek leverages GPT-4's programming strengths by integrating GPT-4 into its software-development IDE to provide code suggestion/generation and automatic error correction, greatly improving software developers' efficiency (in the context of its IC design flow).",
+          "source_url": "https://news.microsoft.com/zh-tw/features/azure_openai_security/",
+          "source_type": "vendor_case_study",
+          "source_quality": "primary",
+          "date": null,
+          "quote": "聯發科技利用GPT-4模型在程式語言方面的優勢，將GPT-4與程式開發IDE進行整合，提供代碼建議和生成、自動修正錯誤等功能，大幅提高軟體開發人員的工作效率"
+        },
+        {
+          "claim": "Same GPT-4-in-IDE code-assist claim corroborated by Business Weekly's coverage of MediaTek adopting Microsoft Azure OpenAI, framed within MediaTek's IC design flow.",
+          "source_url": "https://www.businessweekly.com.tw/business/indep/1003492",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": null,
+          "quote": "在IC設計流程上，聯發科技利用GPT-4模型在程式語言方面的優勢，將GPT-4與程式開發IDE進行整合，提供代碼建議和生成、自動修正錯誤等功能"
+        },
+        {
+          "claim": "MediaTek's DaVinci internal GenAI tool reached 97% employee usage, 88% of users reported productivity improvement, and it spawned 50+ cross-department GenAI projects; DaVinci 1.0 includes an API library that can interact with the software-development environment and IC design environment.",
+          "source_url": "https://www.cw.com.tw/article/5131170",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": null,
+          "quote": "97%員工曾使用達哥，協助完成超過50個跨部門專案，88%使用者認同生產力因此提升"
+        },
+        {
+          "claim": "DaVinci 1.0 contains API libraries that can interact with the OA environment, software-development environment, and IC-design environment, plus prompt-optimization engine, plugin library and model library.",
+          "source_url": "https://www.ithome.com.tw/news/162202",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": null,
+          "quote": "達哥1.0內含可跟OA環境、軟體開發環境、IC設計環境互動的API庫"
+        }
+      ]
+    },
+    {
+      "tool_name": "Domain-adapted LLM AI agents in R&D (NVIDIA AI Factory) - AI-assisted code completion",
+      "tool_category": "agentic coding agent",
+      "signal_types": ["internal_dogfooding"],
+      "signal_summary": "MediaTek operates an on-premises 'AI factory' on NVIDIA DGX SuperPOD and integrates AI agents into its R&D workflow, including AI-assisted code completion (reducing programming time and error rates) and a domain-adapted LLM agent that auto-generates technical documentation from design flowcharts/state diagrams.",
+      "evidence": [
+        {
+          "claim": "By centralizing AI compute, MediaTek streamlined R&D workflows for applications like AI-assisted code completion and automated documentation; AI-assisted code completion cuts programming time and reduces errors, and a domain-specific LLM agent extracts info from design flowcharts/state diagrams to generate technical documentation in days instead of weeks.",
+          "source_url": "https://www.nvidia.com/en-us/customer-stories/mediatek-ai-factory/",
+          "source_type": "vendor_case_study",
+          "source_quality": "primary",
+          "date": null,
+          "quote": "AI-assisted code completion cuts down programming time and reduces errors, and an agent built with domain-specific language models extracts information from design flowcharts and state diagrams to generate technical documentation in days instead of weeks"
+        },
+        {
+          "claim": "MediaTek's AI factory on DGX SuperPOD processes ~60 billion tokens/month for inference and thousands of model-training iterations monthly (attributed to David Ku, Co-COO and CFO), establishing scale of the R&D AI platform underpinning the coding/agent use cases.",
+          "source_url": "https://www.mediatek.com/tek-talk-blogs/building-mediateks-ai-future-with-an-on-premises-ai-factory-powered-by-nvidia",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": null,
+          "quote": "Our AI factory, powered by DGX SuperPOD, processes approximately 60 billion tokens per month for inference and completes thousands of model-training iterations every month"
+        },
+        {
+          "claim": "Secondary corroboration of the same NVIDIA AI factory / AI-assisted code completion and automated documentation use cases.",
+          "source_url": "https://telematicswire.net/mediatek-builds-on-premises-ai-factory-with-nvidia-to-supercharge-ai-innovation/",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": null,
+          "quote": null
+        }
+      ]
+    },
+    {
+      "tool_name": "GitHub Copilot (referenced as a model/target; internal Copilot-like code completion)",
+      "tool_category": "AI code assistant",
+      "signal_types": ["internal_dogfooding"],
+      "signal_summary": "MediaTek's Software Engineering / Product Security division stated it aims to upgrade product development with an AI capability similar to GitHub Copilot (auto-completing code lines from partial input) as part of a 'smart software factory' goal across its thousands of software engineers. Evidence indicates aspiration / Copilot-like internal tooling rather than confirmed seat-level deployment of the GitHub Copilot product itself.",
+      "evidence": [
+        {
+          "claim": "MediaTek's Software Engineering and Product Security Division aims to upgrade product development via AI with plans similar to GitHub's Copilot (auto-completing code lines from partial input), aiming to become a 'smart software factory' with AI helping its thousands of software engineers.",
+          "source_url": "https://www.yourator.co/articles/237",
+          "source_type": "reputable_news",
+          "source_quality": "weak",
+          "date": null,
+          "quote": null
+        }
+      ]
+    }
+  ],
+  "notes": "Searches run (EN + Traditional Chinese): MediaTek/聯發科 + GitHub Copilot, Cursor, Claude Code, Amazon Q Developer, Gemini CLI; engineering blog; earnings call; NVIDIA AI factory / DGX SuperPOD; Microsoft Azure OpenAI case study; DaVinci/達哥 platform; 104/Indeed/Yourator job postings; 'smart software factory'. STRONGEST, well-corroborated evidence is internal_dogfooding: (1) GPT-4/Azure OpenAI integrated into MediaTek's software-development IDE for code suggestion/generation/auto-fix (Microsoft newsroom + Business Weekly), and (2) AI-assisted code completion + documentation agents on the NVIDIA DGX SuperPOD AI factory (NVIDIA case study + MediaTek blog). The DaVinci platform (97% employee usage, 88% productivity gain, 50+ cross-dept projects) explicitly lists API libraries for the software-development and IC-design environments. NO evidence found of MediaTek using brand-name agentic coding agents specifically: Claude Code, Cursor, Devin, Windsurf, Gemini CLI, Amazon Q Developer, OpenAI Codex/Operator, Antigravity, or Cowork returned nothing tied to MediaTek. GitHub Copilot appears only as a reference/aspiration ('plans similar to Copilot'), not as a confirmed deployed product with seat counts. CAVEAT: WebFetch returned HTTP 403 on most target domains (nvidia.com, mediatek.com, microsoft.com, businessweekly, cw.com.tw, telematicswire); quotes above were captured verbatim from WebSearch result snippets of those same primary/credible pages, not from full-page fetches. Publication dates could not be confirmed via fetch and are left null; the Azure OpenAI/GPT-4-IDE material dates to MediaTek's 2022-2023 GenAI rollout era, and the NVIDIA AI factory material is ~2025-2026. DaVinci was reportedly transferred to Cyberon (賽微科技) in early 2025."
+}
