@@ -1,0 +1,75 @@
+{
+  "company": "Cisco Systems",
+  "company_key": "cisco",
+  "agent": "B_usage_analyst",
+  "no_usage_evidence": false,
+  "tool_usage": [
+    {
+      "tool_name": "GitHub Copilot",
+      "how_used": ["developer workflow/IDE", "code review", "other - documentation generation"],
+      "what_for": [
+        "code autocompletion and snippet/function generation in day-to-day development",
+        "code documentation (up to ~50% time saved reported)",
+        "repetitive coding tasks, unit test generation, debugging, pair programming (~30-40% time saved)",
+        "shift toward human review of AI-generated code ('3X output')",
+        "evaluating/explaining and documenting Python sample scripts (Webex engineering)"
+      ],
+      "teams": "Cisco IT / engineering org; a ~6,000-developer business group (per GitHub); a study cohort of 26 Cisco engineers; Webex Engineering (one named Technical Leader using Copilot in VS Code)",
+      "scale": "~6,000 developers in one business group rolled out with training (GitHub source); study of 26 engineers on proprietary codebases; Cisco IT cites '3X increase in output' and 30-50% productivity gains across IT functions (projected ~36% overall). Figures are company/vendor self-reported - treat with caveat.",
+      "internal_vs_product": "internal_dev",
+      "supporting_source_urls": [
+        "https://resources.github.com/learn/pathways/copilot/essentials/tips-for-a-successful-rollout-of-github-copilot/",
+        "https://arxiv.org/abs/2406.17910",
+        "https://blogs.cisco.com/cisco-on-cisco/the-future-of-work-how-cisco-it-leverages-ai-for-innovation-and-employee-experience",
+        "https://developer.webex.com/blog/look-ma-no-hands-using-ai-to-generate-and-refine-webex-github-sample-documentation"
+      ],
+      "confidence_note": "High confidence that Cisco engineers use GitHub Copilot in their developer workflow: corroborated by GitHub rollout guidance, an arXiv study explicitly conducted at Cisco, and Cisco IT's own blog. Exact current seat counts/percentages are self-reported and the most authoritative pages were only accessible via search snippets (direct fetch returned 403)."
+    },
+    {
+      "tool_name": "Copilot agent mode / agentic coding agents (general)",
+      "how_used": ["developer workflow/IDE"],
+      "what_for": [
+        "moving from AI code-assistant ('copilot') usage toward agentic ('agent') AI-powered engineering"
+      ],
+      "teams": "Cisco CX Engineering (Generative AI and Network Security) - presenter John Groetzinger, Principal Engineer",
+      "scale": "unknown (conference talk; no seat/headcount figures surfaced)",
+      "internal_vs_product": "internal_dev",
+      "supporting_source_urls": [
+        "https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2026/pdf/AI-2957.pdf"
+      ],
+      "confidence_note": "Medium confidence on direction (a Cisco principal engineer publicly presenting a Copilot-to-agent developer journey at Cisco Live EMEA 2026); specific tools/scale not confirmed because the PDF could not be fetched directly (403)."
+    },
+    {
+      "tool_name": "Claude Code",
+      "how_used": ["developer workflow/IDE", "other - multi-agent orchestration framework"],
+      "what_for": [
+        "orchestrating parallel Claude Code agents across a codebase (claimed context reduction and faster execution)"
+      ],
+      "teams": "GitHub org 'ciscoittech' (Cisco affiliation unverified)",
+      "scale": "unknown",
+      "internal_vs_product": "unknown",
+      "supporting_source_urls": [
+        "https://github.com/ciscoittech/claude-agent-framework"
+      ],
+      "confidence_note": "Low confidence. The repo claims production-derived patterns but the 'ciscoittech' org's tie to Cisco Systems is not independently verified; could be an unofficial/personal handle. Listed for completeness, not as solid evidence of official Cisco Claude Code adoption."
+    },
+    {
+      "tool_name": "JARVIS (Cisco Outshift internal AI Platform Engineer)",
+      "how_used": ["internal automation", "CI/CD", "developer workflow/IDE"],
+      "what_for": [
+        "automating developer requests / eliminating operational bottlenecks",
+        "configuring CI/CD pipelines (5-7 days reduced to under an hour)",
+        "platform-engineering tasks surfaced into Jira, Backstage, Webex, and CLI"
+      ],
+      "teams": "Cisco Outshift Platform Engineering team",
+      "scale": "Self-reported 10x productivity boost; up to 70% of time saved on repetitive operational tasks; system has 15+ sub-agents, 40 tool integrations, 10 automated workflows. Self-reported - treat with caveat.",
+      "internal_vs_product": "both",
+      "supporting_source_urls": [
+        "https://blog.langchain.com/cisco-outshift/",
+        "https://outshift.cisco.com/blog/JARVIS-agentic-platform-engineering-Outshift"
+      ],
+      "confidence_note": "High confidence this exists and is used internally by Cisco engineers, but it is a Cisco-BUILT agent (LangGraph/LangSmith) rather than a third-party coding agent like Claude Code/Copilot/Cursor. Relevant as internal agentic-AI dev usage but distinct from third-party tool dogfooding."
+    }
+  ],
+  "notes": "Cisco clearly uses third-party AI coding assistants internally, with GitHub Copilot the best-documented (scaled rollout with training, an in-house study, and public IT productivity claims). Cisco engineers are publicly moving toward agentic coding (Cisco Live 2026 talk). Cisco also builds its own agentic internal tooling (JARVIS) and a company-wide internal AI Assistant (~156k daily interactions, 100k+ users) - these are distinguished here from third-party developer coding-agent usage. Claude Code signal exists only via an unverified GitHub org and is low confidence. No credible evidence surfaced for Cisco engineers using Amazon Q Developer, Gemini CLI, Antigravity, OpenAI Codex/Operator, Devin, Windsurf, or Cowork. Caveat: several primary source pages (Cisco blogs, arXiv, Cisco Live PDF, GitHub resources, Webex dev blog) returned HTTP 403 on direct fetch; supporting claims rest on search-result snippets of those real URLs."
+}

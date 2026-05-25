@@ -1,0 +1,107 @@
+{
+  "company": "Cisco Systems",
+  "ticker": "CSCO",
+  "company_key": "cisco",
+  "research_date": "2026-05-25",
+  "agent": "A_evidence_finder",
+  "no_evidence_found": false,
+  "tools_found": [
+    {
+      "tool_name": "GitHub Copilot",
+      "tool_category": "AI code assistant",
+      "signal_types": ["internal_dogfooding"],
+      "signal_summary": "Cisco rolled out GitHub Copilot at scale to its developer workforce (reported ~6,000 developers in one business group) with dedicated training, and Cisco engineers/researchers published a peer study evaluating Copilot on real proprietary Cisco codebases. Cisco IT publicly reports AI-first engineering with Copilot driving large output gains.",
+      "evidence": [
+        {
+          "claim": "GitHub's official rollout guidance cites Cisco rolling out Copilot to ~6,000 developers in a business group and partnering with GitHub Premium Support for training sessions on prompting and best practices.",
+          "source_url": "https://resources.github.com/learn/pathways/copilot/essentials/tips-for-a-successful-rollout-of-github-copilot/",
+          "source_type": "vendor_case_study",
+          "source_quality": "credible_secondary",
+          "date": null,
+          "quote": "When Cisco rolled out Copilot to their 6,000 developers in their business group, they were eager and excited, but had plenty of questions."
+        },
+        {
+          "claim": "A peer-reviewed/arXiv study titled 'Transforming Software Development: Evaluating the Efficiency and Challenges of GitHub Copilot in Real-World Projects' was conducted at Cisco with 26 engineers on large proprietary codebases, identifying 15 dev tasks and finding up to 50% time saved on documentation/autocomplete and 30-40% on repetitive coding, projecting 33-36% overall time reduction.",
+          "source_url": "https://arxiv.org/abs/2406.17910",
+          "source_type": "reputable_news",
+          "source_quality": "primary",
+          "date": "2024-06",
+          "quote": "explores the impact of GitHub Copilot within a real-world, cloud-first software development environment at Cisco"
+        },
+        {
+          "claim": "Cisco IT publicly states AI-first engineering with tools like GitHub Copilot shows a 3X increase in output, shifting from human coding to human review, with 30-50% productivity gains across IT functions (projected 36% overall).",
+          "source_url": "https://blogs.cisco.com/cisco-on-cisco/the-future-of-work-how-cisco-it-leverages-ai-for-innovation-and-employee-experience",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": null,
+          "quote": "AI-first engineering with tools like GitHub Copilot shows a 3X increase in output, shifting from human coding to human review."
+        },
+        {
+          "claim": "A Webex Developers blog describes a Cisco Webex Engineering Technical Leader using Microsoft/GitHub Copilot in VS Code (plus an in-house ChatGPT) to evaluate, explain, and document Python sample scripts.",
+          "source_url": "https://developer.webex.com/blog/look-ma-no-hands-using-ai-to-generate-and-refine-webex-github-sample-documentation",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": null,
+          "quote": null
+        }
+      ]
+    },
+    {
+      "tool_name": "Copilot agent mode / agentic coding agents (general)",
+      "tool_category": "agentic coding agent",
+      "signal_types": ["internal_dogfooding"],
+      "signal_summary": "A Cisco Live EMEA 2026 conference talk by a Cisco CX Engineering Principal Engineer covers the developer journey from Copilot (assistant) to agent (agentic coding), indicating Cisco engineers are moving toward agentic developer tooling.",
+      "evidence": [
+        {
+          "claim": "Cisco Live EMEA 2026 session AI-2957 'From Copilot to Agent: A Developer's Journey into AI-Powered Engineering' was presented by John Groetzinger, Principal Engineer in Cisco CX Engineering (Generative AI and Network Security).",
+          "source_url": "https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2026/pdf/AI-2957.pdf",
+          "source_type": "conference_talk",
+          "source_quality": "primary",
+          "date": "2026-02",
+          "quote": "From Copilot to Agent: A Developer's Journey into AI-Powered Engineering"
+        }
+      ]
+    },
+    {
+      "tool_name": "Claude Code",
+      "tool_category": "agentic coding agent",
+      "signal_types": ["internal_dogfooding"],
+      "signal_summary": "A GitHub organization named 'ciscoittech' hosts an open-source 'claude-agent-framework' for orchestrating parallel Claude Code agents, claiming production-derived patterns. Cisco affiliation of the org is not independently confirmed, so this is a weak/ambiguous signal.",
+      "evidence": [
+        {
+          "claim": "GitHub org 'ciscoittech' publishes 'claude-agent-framework', a framework for building multi-agent development systems with Claude Code (claims ~97% context reduction and 3-6x faster execution via parallel agents, 'built from real-world patterns used in production').",
+          "source_url": "https://github.com/ciscoittech/claude-agent-framework",
+          "source_type": "other",
+          "source_quality": "weak",
+          "date": null,
+          "quote": "Complete framework for building intelligent multi-agent development systems with Claude Code."
+        }
+      ]
+    },
+    {
+      "tool_name": "JARVIS (Cisco Outshift internal AI Platform Engineer)",
+      "tool_category": "other",
+      "signal_types": ["vendor_maker", "internal_dogfooding"],
+      "signal_summary": "JARVIS is a Cisco-built (Outshift) internal multi-agent platform-engineering assistant (LangGraph/LangSmith) used by Cisco engineers to automate developer requests, CI/CD pipeline setup, and operational tasks. This is Cisco-built internal automation rather than a third-party coding agent, but it is Cisco engineers using agentic AI in their dev workflow.",
+      "evidence": [
+        {
+          "claim": "Cisco Outshift's JARVIS is a multi-agent system (15+ sub-agents, 40 tool integrations) surfaced into Jira, Backstage, Webex, and CLI; the team reports a 10x productivity boost, CI/CD pipeline setup cut from 5-7 days to under an hour, and up to 70% time saved on repetitive ops.",
+          "source_url": "https://blog.langchain.com/cisco-outshift/",
+          "source_type": "vendor_case_study",
+          "source_quality": "credible_secondary",
+          "date": "2025-05",
+          "quote": "How Outshift by Cisco achieved a 10x productivity boost with their Agentic AI Platform Engineer"
+        },
+        {
+          "claim": "Cisco's own Outshift blog describes JARVIS as an Iron Man-inspired agent transforming platform engineering at Outshift.",
+          "source_url": "https://outshift.cisco.com/blog/JARVIS-agentic-platform-engineering-Outshift",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": "2025-05",
+          "quote": null
+        }
+      ]
+    }
+  ],
+  "notes": "Searches run (~14): Claude Code + Cisco dogfooding; GitHub Copilot + Cisco adoption; Cursor + Cisco; Copilot 6000 developers case study; Cisco engineering blog internal AI assistant; Jeetu Patel/earnings AI coding; Amazon Q/Gemini CLI/Windsurf/Devin + Cisco; Cisco 'AI-first engineering' 3X; Cisco software-engineer job postings naming tools; Outshift/JARVIS; Cisco Security 'Transforming Software Development' Copilot study; Webex + Copilot Microsoft customer story; Cisco Live talks; Cisco + Claude enterprise; agent mode + Cisco internal; ciscoittech org verification. STRONGEST/most credible: GitHub Copilot — corroborated by GitHub's own rollout guidance (6,000 devs), an arXiv study at Cisco (26 engineers, real proprietary code), and Cisco IT's blog (3X output). CAVEATS: (1) Several primary URLs (Cisco blogs, arXiv, Webex dev blog, Cisco Live PDF, GitHub resources) returned HTTP 403 to direct fetch; claims rest on search-result snippets of those REAL URLs, not full-text fetch. (2) The 'ciscoittech' GitHub org's Cisco affiliation is NOT independently confirmed — could be a personal/unofficial handle borrowing the name; treat Claude Code signal as weak. (3) JARVIS and Cisco's internal AI Assistant (156k daily interactions, 100k users) are Cisco-BUILT products/automation, not third-party coding agents — included as context but distinguished from third-party coding-agent dogfooding. (4) No evidence found for Cisco engineers using Amazon Q Developer, Gemini CLI, Antigravity, OpenAI Codex/Operator, Devin, Windsurf, or Cowork as developer tools; those searches returned only generic listicles/comparisons. No direct exec/earnings quote tying Cisco coding-agent use to a named executive was found."
+}
