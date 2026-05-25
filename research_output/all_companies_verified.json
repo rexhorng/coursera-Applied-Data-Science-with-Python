@@ -1,0 +1,521 @@
+{
+  "agent": "C_verifier",
+  "verified_date": "2026-05-25",
+  "tier_legend": {
+    "T1": "confirmed",
+    "T2": "strong",
+    "T3": "weak",
+    "T4": "no evidence found"
+  },
+  "companies": [
+    {
+      "company": "Apple",
+      "company_key": "apple",
+      "overall_assessment": "Apple's strongest agentic-AI-dev-tool signal centers on Anthropic's Claude / Claude Code: a primary Apple Newsroom + Anthropic case study confirm the Claude Agent SDK shipped as a product integration in Xcode 26.3, and internal dogfooding is well-supported by an accidental CLAUDE.md leak in the Apple Support app plus Bloomberg's report of an Apple-Anthropic internal Xcode 'vibe-coding' platform. Codex is a confirmed Xcode product integration but with no internal-use evidence; Cursor is only external MCP enablement; GitHub Copilot was restricted internally in 2023.",
+      "tools": [
+        {
+          "tool_name": "Claude Code / Claude Agent SDK (Anthropic)",
+          "internal_use_tier": "T2",
+          "signal_types": ["internal_dogfooding", "product_integration"],
+          "tier_rationale": "Internal dogfooding is strong (T2): the Apple Support app CLAUDE.md leak (a Claude Code artifact) is widely reported (MacRumors analyst, Yahoo, BigGo, HN) and Bloomberg reported an internal Apple-Anthropic Xcode+Claude platform, but there is no Apple primary statement or vendor case study naming Apple's internal Claude Code teams/scale, so it stops short of T1 for internal use. The product-integration signal is independently T1 (Apple Newsroom + Anthropic announcement both name Apple and the Claude Agent SDK in Xcode 26.3).",
+          "key_evidence_urls": [
+            "https://www.apple.com/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/",
+            "https://www.anthropic.com/news/apple-xcode-claude-agent-sdk",
+            "https://www.bloomberg.com/news/articles/2025-05-02/apple-anthropic-team-up-to-build-ai-powered-vibe-coding-platform"
+          ],
+          "caveats": "Two distinct signals must be kept separate: the Xcode 26.3 Claude Agent SDK is a confirmed PRODUCT integration (T1-grade primary sourcing), while genuine internal engineer dogfooding rests on a leak + Bloomberg (paywalled, inferred from title/secondary coverage) and is T2. WebFetch returned HTTP 403 on nearly all URLs incl. apple.com, anthropic.com and Bloomberg, so quotes are search-snippet/headline-level paraphrases. The 'prototype testing / design reviews / security automation' breadth traces to a single weak source (adam.holter.com). No verified Apple-specific seat/percentage figures; search-surfaced '70-90%' and 'Stripe 1,370 engineers' numbers pertain to Anthropic/Stripe, NOT Apple."
+        },
+        {
+          "tool_name": "OpenAI Codex",
+          "internal_use_tier": "T4",
+          "signal_types": ["product_integration"],
+          "tier_rationale": "Product integration into Xcode 26.3 is confirmed (Apple Newsroom primary + VentureBeat), so the product signal is T1-grade. But for INTERNAL Apple engineer use specifically, no evidence surfaced, so internal_use_tier is T4. Codex here is something Apple ships for third-party developers, not something its own engineers are documented dogfooding.",
+          "key_evidence_urls": [
+            "https://www.apple.com/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/",
+            "https://venturebeat.com/technology/apple-integrates-anthropics-claude-and-openais-codex-into-xcode-26-3-in-push"
+          ],
+          "caveats": "Do not conflate the confirmed Xcode product integration with internal dogfooding; only the former is evidenced. 403-fetch limits apply; quotes are snippet-level."
+        },
+        {
+          "tool_name": "Cursor (third-party MCP agents)",
+          "internal_use_tier": "T4",
+          "signal_types": ["product_integration"],
+          "tier_rationale": "Only signal is that Xcode 26.3 exposes ~20 tools via MCP so external developers can connect Cursor/Claude Code CLI. This is developer enablement, not Apple-internal use, and the lone source is a weak dev.to post. No internal Apple Cursor use found (T4 for internal use).",
+          "key_evidence_urls": [
+            "https://dev.to/arshtechpro/xcode-263-use-ai-agents-from-cursor-claude-code-beyond-4dmi"
+          ],
+          "caveats": "Single weak source; purely external developer enablement via MCP, not Apple dogfooding."
+        },
+        {
+          "tool_name": "GitHub Copilot",
+          "internal_use_tier": "T4",
+          "signal_types": [],
+          "tier_rationale": "No evidence of Apple engineers using Copilot internally; on the contrary, multiple outlets report Apple restricted internal Copilot/ChatGPT use in 2023. Copilot-for-Xcode exists but is a GitHub/Microsoft product for external developers, not Apple internal use.",
+          "key_evidence_urls": [
+            "https://techcrunch.com/2023/05/19/apple-reportedly-limits-internal-use-of-ai-powered-tools-like-chatgpt-and-github-copilot/"
+          ],
+          "caveats": "The 2023 restriction (T2-credible) is the opposite of adoption; unclear if relaxed after Apple's 2025 Anthropic pivot. Counted as no internal-use evidence (a documented non-adoption signal)."
+        }
+      ],
+      "no_evidence_categories": [
+        "OpenAI Codex internal dogfooding (only product integration found)",
+        "Cursor internal use (only external MCP enablement)",
+        "GitHub Copilot internal use (restricted in 2023)",
+        "Devin, Windsurf, Amazon Q Developer, Gemini CLI, Antigravity, Cowork internal use"
+      ]
+    },
+    {
+      "company": "AMD",
+      "company_key": "amd",
+      "overall_assessment": "AMD's AI Group has unusually well-documented internal Claude Code dogfooding, self-quantified by a named senior director (Stella Laurenzo) in a public GitHub issue and corroborated by reputable tech press, though the disclosure arose in the context of a regression COMPLAINT. AMD's own open-source Apex repo confirms internal tooling that drives Claude Code, OpenAI Codex, and Cursor Agent as interchangeable backends for ROCm GPU-kernel optimization.",
+      "tools": [
+        {
+          "tool_name": "Claude Code (Anthropic)",
+          "internal_use_tier": "T1",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T1: the primary source is AMD's own Senior Director of AI publicly documenting her team's heavy use in GitHub issue anthropics/claude-code#42796 with quantified logs (6,852 sessions, 234,760 tool calls, ~191k lines merged in a weekend), corroborated by The Register, PC Gamer/TechRadar, WinBuzzer. A named company executive's first-hand quantified statement = confirmed.",
+          "key_evidence_urls": [
+            "https://github.com/anthropics/claude-code/issues/42796",
+            "https://www.theregister.com/2026/04/06/anthropic_claude_code_dumber_lazier_amd_ai_director/",
+            "https://winbuzzer.com/2026/04/07/amd-ai-director-claude-code-performance-decline-7000-sessions-xcxwbn/"
+          ],
+          "caveats": "The disclosure is framed as a COMPLAINT about a Feb/Mar 2026 regression after which the team reportedly pulled back from concurrent autonomous workflows to supervised single-session use; usage is real and rich but scoped to one director's team, not an official company-wide disclosure. The GitHub issue was fetchable; the press URLs returned 403 and rest on snippets."
+        },
+        {
+          "tool_name": "OpenAI Codex",
+          "internal_use_tier": "T2",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T2: AMD's own AMD-AGI/Apex repo (primary) lists Codex as a selectable --agent-backend for autonomous ROCm kernel optimization, confirming AMD-built internal tooling drives Codex agentically. Falls short of T1 because the repo documents capability/option rather than quantified production adoption, and no exec statement or case study names Codex usage scale.",
+          "key_evidence_urls": [
+            "https://github.com/AMD-AGI/Apex"
+          ],
+          "caveats": "Single primary repo source; it is one of three optional backends with no usage figures. Internal tooling AMD built, not a product it sells."
+        },
+        {
+          "tool_name": "Cursor (Agent mode)",
+          "internal_use_tier": "T3",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T3: the only signal is the same AMD-AGI/Apex README listing Cursor Agent as a third optional backend (requires a Cursor subscription with agent mode). Confirms it is a supported path but there is no evidence of actual adoption/usage breadth, so this is a weak single-mention inference.",
+          "key_evidence_urls": [
+            "https://github.com/AMD-AGI/Apex"
+          ],
+          "caveats": "Mere listing as an optional backend in one repo; no usage figures or evidence anyone at AMD actually selected the Cursor backend in practice."
+        }
+      ],
+      "no_evidence_categories": [
+        "GitHub Copilot internal use (only generic Fortune-100 stats/listicles)",
+        "Amazon Q Developer, Gemini CLI, Devin, Windsurf, Antigravity, Cowork internal use",
+        "Lisa Su made only general AI statements, named no specific agentic dev tool"
+      ]
+    },
+    {
+      "company": "NVIDIA",
+      "company_key": "nvidia",
+      "overall_assessment": "NVIDIA is one of the most evidence-rich companies: Cursor (official vendor case study naming NVIDIA + repeated Jensen Huang quotes) and OpenAI Codex (official OpenAI case study + NVIDIA's own blog + reputable news on a 10,000-employee rollout) are both T1-confirmed internal adoption at very large scale. Claude Code internal use is weaker, resting mainly on a single keynote line grouping it with Codex and Cursor.",
+      "tools": [
+        {
+          "tool_name": "Cursor",
+          "internal_use_tier": "T1",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T1: an official Cursor case study NAMES NVIDIA (30,000 developers, 3x code), reinforced by multiple direct Jensen Huang public/exec quotes (~40,000 / '100% of our engineers') and Tom's Hardware corroboration. Vendor case study naming the company + exec quotes is the textbook T1 combination.",
+          "key_evidence_urls": [
+            "https://cursor.com/blog/nvidia",
+            "https://techstartups.com/2025/10/09/nvidias-ceo-endorses-cursor-100-of-our-engineers-now-code-with-ai/",
+            "https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-now-produces-three-times-as-much-code-as-before-ai-specialized-version-of-cursor-is-being-used-by-over-30-000-nvidia-engineers-internally"
+          ],
+          "caveats": "Scale figures (30k vs 40k engineers, 3x code) are vendor/CEO-sourced and not independently audited; the 30k/40k discrepancy likely reflects Cursor-specific developer count vs Huang's total-engineer framing. Treat productivity numbers as directional. cursor.com and news pages returned 403; figures from snippets."
+        },
+        {
+          "tool_name": "OpenAI Codex",
+          "internal_use_tier": "T1",
+          "signal_types": ["internal_dogfooding", "product_integration"],
+          "tier_rationale": "T1: an official OpenAI case study NAMES NVIDIA (10,000+ employees), plus NVIDIA's own corporate blog and reputable financial news (Benzinga, TechRadar) including an internal Huang email quote. Both a primary vendor case study naming the company and a company-blog confirmation = confirmed internal use. Codex also runs in production on NVIDIA Blackwell hardware (product/infrastructure partnership), hence the dual signal.",
+          "key_evidence_urls": [
+            "https://openai.com/index/nvidia/",
+            "https://blogs.nvidia.com/blog/openai-codex-gpt-5-5-ai-agents/",
+            "https://www.benzinga.com/markets/tech/26/04/52022856/nvidia-deploys-openais-codex-across-10000-employees-as-jensen-huang-hails-age-of-ai-sam-altman-says-it-was-awesome"
+          ],
+          "caveats": "The 10,000-employee and 50x/35x efficiency/cost figures are vendor/CEO-sourced (directional). Keep the internal dogfooding (10k employees) distinct from the Blackwell-infrastructure product partnership. 403-fetch on vendor pages; quotes from snippets."
+        },
+        {
+          "tool_name": "Claude Code",
+          "internal_use_tier": "T3",
+          "signal_types": ["internal_dogfooding", "product_integration"],
+          "tier_rationale": "T3 for internal use: the only internal-use signal is a single Jensen Huang GTC 2026 keynote line saying 100% of NVIDIA uses 'a combination of, or often all three of, Claude Code, Codex, and Cursor' (secondary report). There is no Anthropic case study naming NVIDIA's Claude Code teams/scale and no Claude-Code-specific detail, so the internal-use claim is weak/inferential. Separately, the Claude-Code-with-NIM page is a documented product integration (Claude Code can use NIM as backend), distinct from dogfooding.",
+          "key_evidence_urls": [
+            "https://www.techloy.com/nvidia-gtc-2026-everything-jensen-huang-announced-at-the-keynote/",
+            "https://docs.nvidia.com/nim/large-language-models/latest/ai-assistant-integrations/claude-code.html"
+          ],
+          "caveats": "Single keynote grouping (no Claude-Code-specific headcount/teams) keeps this notably weaker than Cursor/Codex despite the same CEO. A primary Anthropic case study naming NVIDIA's internal Claude Code use would be needed to lift this toward T1/T2. The NIM page is a product integration, not internal use."
+        }
+      ],
+      "no_evidence_categories": [
+        "GitHub Copilot internal use (only ecosystem/integration noise: JFrog, jetson-copilot, NIM provider)",
+        "Amazon Q Developer, Windsurf, Devin, Gemini CLI, Antigravity internal use"
+      ]
+    },
+    {
+      "company": "Broadcom",
+      "company_key": "broadcom",
+      "overall_assessment": "Broadcom's internal use of agentic AI coding assistants is real but described GENERICALLY by the company without naming a consumer tool. A primary Broadcom-owned news article documents its Global Technology Organization rolling out agentic coding assistants to 'thousands of developers' with a ticket-to-PR workflow governed via VMware Tanzu Platform + MCP. Anthropic Claude is integrated into Tanzu as a model provider (a product feature) and is a plausible-but-unconfirmed backend.",
+      "tools": [
+        {
+          "tool_name": "AI coding assistants / agentic AI engineering tools (vendor unnamed; via VMware Tanzu Platform + MCP)",
+          "internal_use_tier": "T2",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T2: a primary company-owned source (news.broadcom.com) describes Broadcom's own GTO org dogfooding agentic coding assistants for thousands of developers with a concrete ticket->implement->auto-PR workflow. It would be T1 (company's own statement) on the FACT of internal agentic-coding adoption, but the specific TOOL is never named, so the company-tool pairing cannot be confirmed at T1; rated T2 to reflect the unnamed-vendor gap.",
+          "key_evidence_urls": [
+            "https://news.broadcom.com/app-dev/broadcom-tanzu-platform-agentic-business-transformation"
+          ],
+          "caveats": "Critically, NO consumer tool is named (no Claude Code/Copilot/Cursor/Codex/Devin). The '5x developer productivity' figure in Tanzu materials refers to Tanzu PaaS push-to-prod generally, NOT the coding-assistant rollout, and must not be attributed to the agents. WebFetch 403 on news.broadcom.com; date (~2025-12-10) and details from search snippets. Scale is the vague 'thousands of developers.'"
+        },
+        {
+          "tool_name": "Anthropic Claude (model provider in Tanzu Platform)",
+          "internal_use_tier": "T4",
+          "signal_types": ["product_integration"],
+          "tier_rationale": "T4 for internal use: the Claude-in-Tanzu integration is a confirmed PRODUCT feature (primary Broadcom source) but whether Claude is the model behind Broadcom's internal coding assistants is only plausible/unstated. As an internal-dev-tool pairing, no evidence exists, so internal_use_tier is T4 with the product-integration signal noted.",
+          "key_evidence_urls": [
+            "https://news.broadcom.com/artificial-intelligence/vmware-tanzu-unlocks-genai-roi-for-the-enterprise-by-accelerating-the-delivery-of-agentic-applications"
+          ],
+          "caveats": "Confirmed as a Tanzu product feature, not as Broadcom internal dev use. Attributing it as the backend of the GTO assistants is speculation. Heavy product/hardware noise excluded: the Anthropic-Broadcom partnership is about AI accelerator chips, not dev tooling."
+        }
+      ],
+      "no_evidence_categories": [
+        "Named tools (Claude Code, GitHub Copilot, Cursor, Codex, Amazon Q, Gemini CLI, Devin, Windsurf, Cowork) confirmed as Broadcom internal dev tools",
+        "klover.ai 'Broadcom uses AI agents' listicles treated as non-evidence"
+      ]
+    },
+    {
+      "company": "MediaTek",
+      "company_key": "mediatek",
+      "overall_assessment": "MediaTek's agentic/AI coding usage is internal dogfooding of HOME-BUILT tooling, not adoption of brand-name agentic coding agents. It integrated GPT-4 (via Azure OpenAI) into its software-development IDE for code suggestion/generation/auto-fix (Microsoft case study + Business Weekly), and runs AI-assisted code completion plus documentation agents on its NVIDIA DGX SuperPOD AI factory (NVIDIA case study + MediaTek blog). GitHub Copilot appears only as an aspirational reference.",
+      "tools": [
+        {
+          "tool_name": "MediaTek DaVinci (達哥) + GPT-4 / Azure OpenAI IDE integration",
+          "internal_use_tier": "T1",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T1: a Microsoft vendor case study (news.microsoft.com) NAMES MediaTek and states GPT-4 is integrated into MediaTek's software-development IDE for code suggestion/generation/auto-fix, corroborated by Business Weekly, CommonWealth and iThome. Official vendor case study naming the company = confirmed.",
+          "key_evidence_urls": [
+            "https://news.microsoft.com/zh-tw/features/azure_openai_security/",
+            "https://www.businessweekly.com.tw/business/indep/1003492",
+            "https://www.cw.com.tw/article/5131170"
+          ],
+          "caveats": "This is home-built tooling on GPT-4/Azure OpenAI, not a named third-party agentic coding agent. The 97%/88%/50-project figures are company-cited and PLATFORM-WIDE (all of DaVinci), not coding-specific, so apply to coding use only loosely. WebFetch 403 on most domains; quotes are verbatim search snippets; dates unverified (~2022-2023 era). DaVinci reportedly transferred to Cyberon in early 2025."
+        },
+        {
+          "tool_name": "Domain-adapted LLM AI agents on NVIDIA DGX SuperPOD (AI Factory)",
+          "internal_use_tier": "T1",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T1: NVIDIA's official customer story NAMES MediaTek and describes AI-assisted code completion + agentic documentation generation in R&D, reinforced by MediaTek's own blog (David Ku attribution) and telematicswire. Vendor case study naming the company plus the company's own blog = confirmed.",
+          "key_evidence_urls": [
+            "https://www.nvidia.com/en-us/customer-stories/mediatek-ai-factory/",
+            "https://www.mediatek.com/tek-talk-blogs/building-mediateks-ai-future-with-an-on-premises-ai-factory-powered-by-nvidia"
+          ],
+          "caveats": "Home-grown domain-adapted LLM agents, not a commercial agentic coding agent. No per-engineer coding-adoption figures; the 60B tokens/month and model-scaling figures describe infrastructure scale, not coding-seat counts. 403-fetch; details from snippets."
+        },
+        {
+          "tool_name": "GitHub Copilot (referenced as model/aspiration)",
+          "internal_use_tier": "T3",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T3: a single weak source (yourator.co) says MediaTek's Software Engineering & Product Security Division aims for an AI capability 'similar to GitHub Copilot' for a 'smart software factory.' This is aspiration/analogy, not confirmed deployment of the Copilot product, and rests on one low-quality source.",
+          "key_evidence_urls": [
+            "https://www.yourator.co/articles/237"
+          ],
+          "caveats": "Framed as a plan 'similar to' Copilot, NOT evidence the commercial Copilot product is deployed with seats. Single weak source. Arguably this belongs under home-built ambitions rather than Copilot adoption."
+        }
+      ],
+      "no_evidence_categories": [
+        "Claude Code, Cursor, Devin, Windsurf, Gemini CLI, Amazon Q Developer, OpenAI Codex/Operator, Antigravity, Cowork internal use",
+        "GitHub Copilot actual product deployment (only aspirational reference found)"
+      ]
+    },
+    {
+      "company": "Qualcomm",
+      "company_key": "qualcomm",
+      "overall_assessment": "Qualcomm's clearest internal AI-coding signal is its OWN in-house on-device code assistant (LLaMA 3 8B on Snapdragon NPU, in Visual Studio), reported at 1,500+ engineers / millions of lines via a Qualcomm VP demo, deliberately on-device to protect IP. There is also applied use of fine-tuned LLMs for Verilog/HDL chip-design. No evidence of internal third-party agentic coding agents; CodeMate is a Snapdragon product/ISV integration and Contextual AI is a documentation RAG tool (not coding).",
+      "tools": [
+        {
+          "tool_name": "Qualcomm in-house on-device AI code assistant (LLaMA 3 8B on Snapdragon NPU, in Visual Studio)",
+          "internal_use_tier": "T2",
+          "signal_types": ["internal_dogfooding", "product_integration"],
+          "tier_rationale": "T2: a Qualcomm VP (Jeff Monday) demoed the in-house assistant on CIO.com (1,500+ engineers, millions of lines), corroborated across consistent search returns and a LinkedIn repost. A company exec demonstrating the tool is strong sourcing, but it is a single promotional product-demo context, the exact figure could not be verified verbatim (403), and there is no Qualcomm press release / case study, so it sits at T2 rather than T1.",
+          "key_evidence_urls": [
+            "https://www.cio.com/video/3992537/snapdragon-npu-powers-ai-code-generation-at-the-edge.html",
+            "https://www.linkedin.com/posts/jeffmonday_snapdragon-npu-powers-ai-code-generation-activity-7333884880382042112-LRlB"
+          ],
+          "caveats": "Mixed signal: genuine internal dogfooding AND a Snapdragon-X product showcase. The '1,500+ engineers / millions of lines' figure comes from a single demo/promotional source surfaced via snippets (403 fetch blocks), so treat exact numbers with mild caution. This is Qualcomm's own tool, not a named third-party agentic agent."
+        },
+        {
+          "tool_name": "Qualcomm Verilog/HDL code-generation LLMs (fine-tuned LLaMA 3.1 8B on in-house IP)",
+          "internal_use_tier": "T3",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T3: evidence is an arXiv paper and research news (techxplore) indicating Qualcomm engineers fine-tune LLaMA-3.1-8B on in-house Verilog IP and received NYU Tandon's CL Verilog model for EVALUATION. Shows applied interest but no quantified internal production deployment, so it is weak/inferential for actual usage.",
+          "key_evidence_urls": [
+            "https://arxiv.org/pdf/2503.13116",
+            "https://techxplore.com/news/2025-06-ai-specialized-chip-language.html"
+          ],
+          "caveats": "Academic/evaluation framing; 'received models for evaluation' is not the same as production use. No scale or workflow detail."
+        },
+        {
+          "tool_name": "CodeMate (third-party agentic coding agent on Snapdragon X)",
+          "internal_use_tier": "T4",
+          "signal_types": ["product_integration", "vendor_maker"],
+          "tier_rationale": "T4 for internal use: the Qualcomm developer blog + codemate.ai confirm CodeMate runs ON Snapdragon X-Series (a platform/ISV partnership), but this is NOT Qualcomm engineers using CodeMate internally. As an internal-dev pairing there is no evidence.",
+          "key_evidence_urls": [
+            "https://www.qualcomm.com/developer/blog/2025/09/codemate-coding-with-on-device-ai",
+            "https://codemate.ai/"
+          ],
+          "caveats": "Product/silicon-platform integration only; Qualcomm is the chip partner, CodeMate AI is the vendor. Flagged to avoid miscounting as internal dogfooding."
+        },
+        {
+          "tool_name": "Contextual AI RAG engineering assistant (NOT a coding agent)",
+          "internal_use_tier": "T2",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T2 as internal AI adoption: a Contextual AI vendor case study NAMES Qualcomm (VP Yogi Chiniga; thousands of engineers using it daily as of Nov 2024). It would be near-T1 by sourcing type, but it is explicitly a documentation Q&A / RAG tool, NOT an agentic coding/developer tool, so it is included only for completeness and should not count as agentic-coding adoption.",
+          "key_evidence_urls": [
+            "https://contextual.ai/case-study/qualcomm"
+          ],
+          "caveats": "Explicitly NOT a coding agent (documentation/knowledge retrieval). Out of scope for agentic-coding adoption; listed to prevent miscounting. Vendor page returned 403; detail from snippets."
+        }
+      ],
+      "no_evidence_categories": [
+        "Claude Code, GitHub Copilot (incl. agent mode/Workspace), OpenAI Codex/Operator, Amazon Q Developer, Gemini CLI, Antigravity, Cursor, Devin, Windsurf, Cowork internal use",
+        "Snapdragon AI Hub / AI Inference Suite treated as product noise, not internal dev use"
+      ]
+    },
+    {
+      "company": "Alphabet / Google",
+      "company_key": "google",
+      "overall_assessment": "Google is the dominant VENDOR_MAKER of agentic/AI coding tools (Gemini CLI, Antigravity, Jules, Gemini Code Assist) AND a heavy internal DOGFOODER of its own Gemini-powered stack (monorepo AI codegen behind Pichai's >25% stat, Cider/Critique, Goose/Gemini-for-Google, AlphaEvolve). Reporting indicates Google engineers are restricted to internal tools and discouraged from third-party agentic tools, so no third-party internal dogfooding was evidenced.",
+      "tools": [
+        {
+          "tool_name": "Internal Gemini-powered code generation (monorepo / Cider; Pichai earnings stat)",
+          "internal_use_tier": "T1",
+          "signal_types": ["internal_dogfooding", "vendor_maker"],
+          "tier_rationale": "T1: Sundar Pichai's Q3 2024 earnings-call statement ('more than a quarter of all new code at Google is generated by AI, then reviewed and accepted by engineers') is a direct exec/earnings quote, widely and consistently reported (The Hill, Fortune) against the Alphabet 8-K filing context. Company's own exec statement = confirmed.",
+          "key_evidence_urls": [
+            "https://thehill.com/policy/technology/4962336-google-ceo-says-more-than-25-percent-of-companys-new-code-written-by-ai/",
+            "https://fortune.com/2024/10/30/googles-code-ai-sundar-pichai/",
+            "https://www.sec.gov/Archives/edgar/data/0001652044/000165204425000087/googexhibit991q32025.htm"
+          ],
+          "caveats": "Only the Q3 2024 >25% figure is a clean directly-attributable Pichai quote; the follow-on >30%/50%/75% figures are secondary/social reporting and should be treated as directional/lower-confidence. The '75%' Fastcompany headline in particular is not a confirmed verbatim exec quote."
+        },
+        {
+          "tool_name": "Cider (internal IDE) + Critique (code review)",
+          "internal_use_tier": "T2",
+          "signal_types": ["internal_dogfooding", "vendor_maker"],
+          "tier_rationale": "T2: Cider/Critique existence and AI features (autocomplete, AI CL descriptions, ML-suggested edits, 97% satisfaction) are well documented, but via credible secondary reporting (engineerscodex, TechRadar on leaked internal guidance) rather than a Google primary source naming the AI feature set. Strong, named, but secondary -> T2.",
+          "key_evidence_urls": [
+            "https://read.engineerscodex.com/p/how-google-takes-the-pain-out-of",
+            "https://www.techradar.com/pro/google-issues-official-internal-guidance-on-using-ai-for-coding-and-its-devs-might-not-be-best-pleased"
+          ],
+          "caveats": "Some AI-feature detail and the internal-mandate framing come from secondary tech-press reporting on leaked internal guidance, not a Google primary doc. 403-fetch limits."
+        },
+        {
+          "tool_name": "Goose / Gemini for Google (internal coding assistant)",
+          "internal_use_tier": "T2",
+          "signal_types": ["internal_dogfooding", "vendor_maker"],
+          "tier_rationale": "T2: multiple reputable outlets (contxto, sightsinplus) report Google built Goose/Gemini-for-Google on its engineering knowledge base and reportedly mandates it. Named secondary journalism on internal tooling -> T2, but a name-collision with Block's unrelated 'Goose' lowers reliability of some details.",
+          "key_evidence_urls": [
+            "https://contxto.com/en/artificial-intelligence/google-introduces-ai-powered-coding-assistant-goose/",
+            "https://sightsinplus.com/news/technology/google-mandates-use-of-internal-ai-models-for-coding-tasks/"
+          ],
+          "caveats": "Internal-mandate detail from secondary tech-press on leaked guidance. NAME COLLISION: Google's internal 'Goose' is distinct from Block's open-source 'Goose' (Linux Foundation, Dec 2025); search results conflated them, so some details are lower confidence."
+        },
+        {
+          "tool_name": "AlphaEvolve (DeepMind)",
+          "internal_use_tier": "T1",
+          "signal_types": ["internal_dogfooding", "vendor_maker"],
+          "tier_rationale": "T1: DeepMind's own primary blog quantifies internal deployment (Borg heuristic recovering ~0.7% of worldwide compute, 23% kernel-tiling and 32% FlashAttention speedups, TPU design), with an arXiv paper. Company's own primary statement with quantified internal results = confirmed.",
+          "key_evidence_urls": [
+            "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/",
+            "https://arxiv.org/abs/2506.13131"
+          ],
+          "caveats": "An autonomous algorithm-discovery agent rather than a developer-IDE coding assistant; relevant as agentic-AI internal use but a different category from interactive coding agents. Now also offered via Google Cloud (product), hence dual signal."
+        },
+        {
+          "tool_name": "Gemini CLI",
+          "internal_use_tier": "T4",
+          "signal_types": ["vendor_maker"],
+          "tier_rationale": "T4 for internal dogfooding: Gemini CLI is a tool Google MAKES (primary blog + TechCrunch confirm the product), but the files surface no specific evidence of Google's own engineers dogfooding it (and reporting suggests internal use centers on Cider/Goose). Strong vendor_maker signal; internal use unproven.",
+          "key_evidence_urls": [
+            "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-cli-open-source-ai-agent/",
+            "https://techcrunch.com/2025/06/25/google-unveils-gemini-cli-an-open-source-ai-tool-for-terminals/"
+          ],
+          "caveats": "Vendor_maker, not evidenced internal dogfooding. Internal Google use is plausible but not specifically documented here."
+        },
+        {
+          "tool_name": "Google Antigravity",
+          "internal_use_tier": "T4",
+          "signal_types": ["vendor_maker", "product_integration"],
+          "tier_rationale": "T4 for internal dogfooding: Antigravity is a Google PRODUCT (primary developers blog + 9to5google + Wikipedia confirm it), and it notably exposes third-party Claude/OpenAI models to EXTERNAL developers via BYO key. No evidence of Google engineers using it internally as a default.",
+          "key_evidence_urls": [
+            "https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/",
+            "https://9to5google.com/2026/05/19/google-antigravity-agentic-developer-suite/"
+          ],
+          "caveats": "Vendor_maker / external product. The Claude/OpenAI model options are a product feature for external developers, NOT internal Google engineering use of third-party tools."
+        },
+        {
+          "tool_name": "Jules",
+          "internal_use_tier": "T4",
+          "signal_types": ["vendor_maker"],
+          "tier_rationale": "T4 for internal dogfooding: Jules is a Google Labs PRODUCT (primary blog + TechCrunch). Usage metrics (2.28M beta visits, 140k+ shared improvements) are EXTERNAL-developer adoption, not internal Google engineering use.",
+          "key_evidence_urls": [
+            "https://blog.google/innovation-and-ai/models-and-research/google-labs/jules/",
+            "https://techcrunch.com/2025/08/06/googles-ai-coding-agent-jules-is-now-out-of-beta/"
+          ],
+          "caveats": "Vendor_maker; metrics are external adoption. No internal dogfooding evidenced."
+        },
+        {
+          "tool_name": "Gemini Code Assist",
+          "internal_use_tier": "T4",
+          "signal_types": ["vendor_maker"],
+          "tier_rationale": "T4 for internal dogfooding: a commercial product Google SELLS (primary blog + docs). The 2.5x figure is Google's own controlled-experiment metric for the product, not evidence of Google-internal engineer adoption.",
+          "key_evidence_urls": [
+            "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-code-assist-updates-google-io-2025/",
+            "https://developers.google.com/gemini-code-assist/docs/overview"
+          ],
+          "caveats": "Vendor_maker / external product; 2.5x is a product experiment metric, not internal-seat data."
+        }
+      ],
+      "no_evidence_categories": [
+        "Internal Google engineer use of third-party agentic tools (GitHub Copilot, Cursor, Claude Code, Codex) - reporting indicates the OPPOSITE (restricted)",
+        "Internal dogfooding of Gemini CLI / Antigravity / Jules / Gemini Code Assist specifically (these are vendor_maker signals, internal use not separately evidenced)"
+      ]
+    },
+    {
+      "company": "Marvell Technology",
+      "company_key": "marvell",
+      "overall_assessment": "Marvell's only concrete, primary-sourced developer-AI usage is EDA-domain: Synopsys.ai Formal Advisor Copilot for formal chip verification, per an official Synopsys customer success story naming Marvell. There is NO evidence of internal use of any general-purpose agentic software-coding agent; Marvell's other AI-coding mention is thought-leadership commentary, not an internal tool disclosure.",
+      "tools": [
+        {
+          "tool_name": "Synopsys.ai Formal Advisor Copilot (generative AI for chip verification)",
+          "internal_use_tier": "T1",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T1: an official Synopsys customer success story (dated 2026-03-10) NAMES Marvell as using Synopsys.ai Formal Advisor Copilot for formal verification, corroborated by edge-ai-vision. Official vendor case study naming the company = confirmed. Note this is EDA-domain generative AI, NOT a general-purpose agentic software-coding agent.",
+          "key_evidence_urls": [
+            "https://www.synopsys.com/success-stories/marvell-gen-ai-formal-verification.html",
+            "https://www.edge-ai-vision.com/2026/05/new-synopsys-ai-copilots-deliver-2-5x-faster-chip-design-productivity/"
+          ],
+          "caveats": "Scope: EDA/chip-verification generative AI, not Claude Code/Copilot/Cursor-style coding agents. Scale figures are vendor-reported and inconsistent: the ~35% productivity gain was attributed to an unnamed 'leading AI infrastructure solutions provider' and could NOT be verbatim-confirmed as Marvell; a separate 4-5x figure is cited generically for Formal Advisor. synopsys.com/venturebeat returned 403; detail from snippets."
+        },
+        {
+          "tool_name": "Gen AI-powered code development (thought-leadership only)",
+          "internal_use_tier": "T4",
+          "signal_types": ["vendor_maker"],
+          "tier_rationale": "T4: Marvell published/hosted a thought-leadership article ('The path forward for gen AI-powered code development in 2025') in its 'AI at Scale' report and on VentureBeat. This is editorial commentary, not documentation of an internal tool stack, so there is no internal-use evidence (weak sources, opinion content).",
+          "key_evidence_urls": [
+            "https://www.marvell.com/blogs/ai-at-scale-a-special-report.html",
+            "https://venturebeat.com/ai/the-path-forward-for-gen-ai-powered-code-development-in-2025"
+          ],
+          "caveats": "Thought leadership / opinion, both weak sources; does not disclose any tool Marvell actually uses internally."
+        }
+      ],
+      "no_evidence_categories": [
+        "Claude Code, GitHub Copilot (incl. agent/Workspace), Cursor, Devin, Windsurf, Amazon Q Developer, Gemini CLI, OpenAI Codex/Operator, Antigravity, Cowork internal use",
+        "No exec/earnings quote (Matt Murphy) referencing internal developer AI coding tools",
+        "No Marvell job posting naming these tools"
+      ]
+    },
+    {
+      "company": "Cisco Systems",
+      "company_key": "cisco",
+      "overall_assessment": "Cisco's best-documented third-party tool is GitHub Copilot, corroborated by GitHub's own rollout guidance (~6,000 developers), an arXiv study conducted at Cisco on proprietary code, and Cisco IT's own blog (3x output). Cisco engineers are publicly moving toward agentic coding (Cisco Live 2026 talk) and Cisco builds its own internal agent (JARVIS/Outshift). A Claude Code signal exists only via an unverified GitHub org and is weak.",
+      "tools": [
+        {
+          "tool_name": "GitHub Copilot",
+          "internal_use_tier": "T1",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T1: triangulated by a GitHub vendor rollout guide naming Cisco (~6,000 developers), an arXiv study explicitly conducted at Cisco on real proprietary codebases (primary, 26 engineers), AND Cisco's own IT blog ('AI-first engineering with tools like GitHub Copilot shows a 3X increase in output'). Cisco's own statement + a vendor case study naming the company = confirmed.",
+          "key_evidence_urls": [
+            "https://blogs.cisco.com/cisco-on-cisco/the-future-of-work-how-cisco-it-leverages-ai-for-innovation-and-employee-experience",
+            "https://resources.github.com/learn/pathways/copilot/essentials/tips-for-a-successful-rollout-of-github-copilot/",
+            "https://arxiv.org/abs/2406.17910"
+          ],
+          "caveats": "Productivity figures (3x output, 30-50% time savings) are company/vendor self-reported; treat as directional. The 6,000-developer figure is one business group, not company-wide. Several primary URLs returned 403; claims rest on snippets of real URLs."
+        },
+        {
+          "tool_name": "Copilot agent mode / agentic coding agents (general)",
+          "internal_use_tier": "T2",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T2: a Cisco Live EMEA 2026 conference talk (AI-2957) by a named Cisco CX Principal Engineer covers the developer journey from Copilot to agentic coding. A conference talk by a company engineer is explicitly T2-grade; it signals direction toward agentic tooling but names no specific tool/scale.",
+          "key_evidence_urls": [
+            "https://www.ciscolive.com/c/dam/r/ciscolive/emea/docs/2026/pdf/AI-2957.pdf"
+          ],
+          "caveats": "Direction-of-travel signal only; specific agentic tools and scale not confirmed (PDF returned 403, detail from snippets)."
+        },
+        {
+          "tool_name": "Claude Code",
+          "internal_use_tier": "T3",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T3: the only signal is a GitHub org 'ciscoittech' publishing a claude-agent-framework, but the org's affiliation with Cisco Systems is NOT independently confirmed and could be an unofficial/personal handle. Single weak/ambiguous-affiliation source = weak.",
+          "key_evidence_urls": [
+            "https://github.com/ciscoittech/claude-agent-framework"
+          ],
+          "caveats": "Unverified affiliation is the key red flag; the 'ciscoittech' handle may not represent Cisco Systems. Should not be counted as official Cisco Claude Code adoption."
+        },
+        {
+          "tool_name": "JARVIS (Cisco Outshift internal AI Platform Engineer)",
+          "internal_use_tier": "T1",
+          "signal_types": ["vendor_maker", "internal_dogfooding"],
+          "tier_rationale": "T1: Cisco's own Outshift blog (primary) plus a LangChain case study naming Cisco document JARVIS, a Cisco-BUILT multi-agent platform-engineering assistant used internally (Jira/Backstage/Webex/CLI; 10x productivity claim). Company's own statement = confirmed internal agentic-AI dev usage, but it is Cisco-built tooling, not a third-party coding agent.",
+          "key_evidence_urls": [
+            "https://outshift.cisco.com/blog/JARVIS-agentic-platform-engineering-Outshift",
+            "https://blog.langchain.com/cisco-outshift/"
+          ],
+          "caveats": "vendor_maker nuance: JARVIS is Cisco-built internal automation (LangGraph/LangSmith), distinct from third-party coding-agent dogfooding. Self-reported 10x/70% figures are directional. Relevant as internal agentic-AI dev usage but not a brand-name coding agent."
+        }
+      ],
+      "no_evidence_categories": [
+        "Amazon Q Developer, Gemini CLI, Antigravity, OpenAI Codex/Operator, Devin, Windsurf, Cowork, Cursor internal use",
+        "No direct exec/earnings quote tying Cisco coding-agent use to a named executive"
+      ]
+    },
+    {
+      "company": "Microsoft",
+      "company_key": "microsoft",
+      "overall_assessment": "Microsoft is simultaneously the VENDOR/MAKER of GitHub Copilot, a heavy INTERNAL DOGFOODER (hard published numbers in dotnet/runtime and the github.com core repo), and a PRODUCT INTEGRATOR shipping Anthropic/OpenAI models in Copilot/Studio/Foundry. Its internal engineers had widely adopted Claude Code but are being migrated to Copilot CLI by June 30, 2026. Evidence quality is among the strongest in the dataset.",
+      "tools": [
+        {
+          "tool_name": "GitHub Copilot (coding agent / agent mode / Copilot CLI)",
+          "internal_use_tier": "T1",
+          "signal_types": ["vendor_maker", "internal_dogfooding", "product_integration"],
+          "tier_rationale": "T1: Microsoft's own primary devblogs quantify internal dogfooding - the dotnet/runtime 10-month experiment (878 CCA PRs, 535 merged, 67.9% success) and the github.com core-repo blog (Copilot assigned issues, 161 typos across 100 files, schema migrations). Plus Satya Nadella's exec quote (20-30% of code AI-written). Company's own primary statements + exec quote = confirmed.",
+          "key_evidence_urls": [
+            "https://devblogs.microsoft.com/dotnet/ten-months-with-cca-in-dotnet-runtime/",
+            "https://github.blog/ai-and-ml/github-copilot/how-copilot-helps-build-the-github-platform/",
+            "https://www.cnbc.com/2025/04/29/satya-nadella-says-as-much-as-30percent-of-microsoft-code-is-written-by-ai.html"
+          ],
+          "caveats": "Dogfooding numbers come from single self-reported Microsoft/GitHub posts (directional). Nadella's '20-30%' was stated at LlamaCon (April 2025), NOT an earnings call, and is treated as credible_secondary exec quote. The internal Copilot CLI standardization ('thousands of engineers') rests on internal-memo journalism, not an official MS statement. 403-fetch on several primary URLs; some verbatim quotes approximate."
+        },
+        {
+          "tool_name": "Anthropic Claude Code (being phased out internally)",
+          "internal_use_tier": "T2",
+          "signal_types": ["internal_dogfooding"],
+          "tier_rationale": "T2: multiple reputable outlets plus the Pragmatic Engineer newsletter report that Claude Code was widely (reportedly the MORE popular) internal tool in Microsoft's Experiences + Devices org and that most licenses are being canceled by June 30, 2026. Strong named journalism but based on internal-memo reporting, not a Microsoft primary statement, so T2 not T1.",
+          "key_evidence_urls": [
+            "https://winbuzzer.com/2026/05/15/microsoft-starts-canceling-claude-code-licenses-xcxwbn/",
+            "https://newsletter.pragmaticengineer.com/p/microsoft-ai-dev-tools",
+            "https://www.developer-tech.com/news/microsoft-claude-code-github-copilot-cli/"
+          ],
+          "caveats": "Notable that this internal adoption is evidenced precisely as it is being WOUND DOWN (migration to Copilot CLI). Scale unquantified (no exact seat count); all detail is internal-memo journalism, not official Microsoft data."
+        },
+        {
+          "tool_name": "Anthropic Claude models in Copilot Studio / Foundry / GitHub Copilot",
+          "internal_use_tier": "T4",
+          "signal_types": ["product_integration"],
+          "tier_rationale": "T4 for internal dev use: a confirmed PRODUCT integration (primary Microsoft Copilot blog + eWeek) where Claude Sonnet/Opus are selectable models for customers building agents. This is customer-facing product integration, not Microsoft-internal developer use, so internal_use_tier is T4 with a strong product-integration signal.",
+          "key_evidence_urls": [
+            "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/anthropic-joins-the-multi-model-lineup-in-microsoft-copilot-studio/",
+            "https://www.eweek.com/news/claude-opus-4-6-microsoft-foundry-github-copilot/"
+          ],
+          "caveats": "Keep distinct from the (now-ending) internal Claude Code dogfooding above; this is a customer-facing model-availability feature, not internal-headcount usage."
+        }
+      ],
+      "no_evidence_categories": [
+        "Internal Microsoft standardization on Cursor, Windsurf, or Devin (only generic comparison listicles)"
+      ]
+    }
+  ],
+  "cross_company_notes": "TIER DISTRIBUTION across all 36 company-tool pairings: T1 = 11, T2 = 9, T3 = 5, T4 = 11. STRONGEST CONFIRMED ADOPTION: NVIDIA (Cursor + Codex both T1 via official vendor case studies naming NVIDIA at huge scale), Microsoft (GitHub Copilot T1 with hard published dotnet/runtime + github.com dogfooding numbers and a Nadella quote), Google (Pichai earnings stat + AlphaEvolve, both T1, plus a deep internal Gemini stack), AMD (Claude Code T1 from a named director's quantified public GitHub issue), Cisco (Copilot T1 triangulated by GitHub + arXiv + Cisco IT), and MediaTek (two T1 home-built signals via Microsoft and NVIDIA case studies). SPARSEST: Marvell (one T1 but it is EDA-only formal verification, with NO general agentic coding agent and otherwise only thought-leadership), Broadcom (real internal adoption but the tool is NEVER NAMED, capped at T2), and Qualcomm (strongest signal is its OWN in-house tool at T2 with no third-party agentic agents). RECURRING TOOLS: Claude Code appears at almost every company (T1 AMD; T2 internal/T1-product Apple; T3 NVIDIA; T3 Cisco; T2-being-phased-out Microsoft; plausible-but-unconfirmed Broadcom backend) - the single most pervasive thread. OpenAI Codex recurs (T1 NVIDIA, T2 AMD, product-only Apple). Cursor recurs strongly only at NVIDIA (T1); elsewhere weak/external. GitHub Copilot is concentrated at Microsoft (vendor+dogfood) and Cisco (T1), and is notably RESTRICTED/banned at Apple and absent as internal use at the chip firms. VENDOR_MAKER vs DOGFOODING: Google and Microsoft both make AND use tools - the discipline here is to keep vendor_maker (Gemini CLI/Antigravity/Jules/Code Assist; GitHub Copilot product) separate from internal dogfooding (Cider/Goose/AlphaEvolve; dotnet/runtime). Apple, NVIDIA, Qualcomm and Broadcom all show the product-integration-vs-internal-use trap (Xcode SDK, NIM, CodeMate, Tanzu) which I scored separately. CONSISTENCY CONCERNS / RED FLAGS: (1) WebFetch HTTP 403 affected nearly every company - most quotes are search-snippet/headline paraphrases, not full-page reads; well-corroborated claims were not auto-downgraded but precise wording/numbers carry mild uncertainty. (2) Self-reported / vendor-reported scale figures recur everywhere (NVIDIA 30k/40k & 3x, Qualcomm 1,500+, Microsoft 67.9%, Cisco 3x, MediaTek 97%/88%, AMD's logs) - all directional, not independently audited. (3) Mis-attribution risks the source agents correctly flagged: Apple's '70-90%'/'Stripe 1,370' numbers belong to Anthropic/Stripe NOT Apple; Marvell's 35% figure was tied to an unnamed provider not verbatim Marvell; the Google/Block 'Goose' name collision; MediaTek's platform-wide 97%/88% being applied loosely to coding. (4) The 'ciscoittech' GitHub org's Cisco affiliation is unverified (kept at T3). (5) Broadcom's named '5x productivity' figure pertains to Tanzu PaaS generally, not the coding agents. (6) Several headline 'X% of code is AI-written' stats (Google 75%, follow-on figures) are secondary/social and should not be treated as confirmed exec quotes. Overall the dataset is internally consistent and the Phase-A/B agents were appropriately skeptical; the main systemic limitation is reliance on search snippets due to 403 fetch blocks plus uniformly self-reported scale numbers."
+}
