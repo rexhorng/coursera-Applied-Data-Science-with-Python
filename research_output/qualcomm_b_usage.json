@@ -1,0 +1,73 @@
+{
+  "company": "Qualcomm",
+  "company_key": "qualcomm",
+  "agent": "B_usage_analyst",
+  "no_usage_evidence": false,
+  "tool_usage": [
+    {
+      "tool_name": "Qualcomm in-house on-device AI code-generation assistant (LLaMA 3 8B on Snapdragon NPU, integrated with Visual Studio)",
+      "how_used": ["developer workflow/IDE", "internal automation"],
+      "what_for": [
+        "On-device code generation in the IDE (Visual Studio) for Qualcomm's own software engineers",
+        "Generating/assisting with code while keeping proprietary source off cloud/hyperscaler models (IP protection)",
+        "Doubling as a reference/demo of Snapdragon X NPU on-device coding capability for enterprise customers"
+      ],
+      "teams": "unknown (described broadly as Qualcomm engineers; demoed by Jeff Monday, VP Global Enterprise & Channel Sales)",
+      "scale": "Reported 1,500+ Qualcomm engineers and 'millions of lines of code' (per a Qualcomm-VP CIO.com demo video, ~June 2025). CAVEAT: figure comes from a single demo/promotional source surfaced via search summaries; exact wording not directly verifiable (primary pages returned HTTP 403).",
+      "internal_vs_product": "both",
+      "supporting_source_urls": [
+        "https://www.cio.com/video/3992537/snapdragon-npu-powers-ai-code-generation-at-the-edge.html",
+        "https://www.linkedin.com/posts/jeffmonday_snapdragon-npu-powers-ai-code-generation-activity-7333884880382042112-LRlB",
+        "https://starthub.asia/snapdragon-npu-powers-ai-code-generation-at-the-edge/"
+      ],
+      "confidence_note": "Medium. Multiple consistent search-result returns attribute the in-house tool + 1,500-engineer figure to the same CIO demo/Qualcomm VP, which is a credible primary-ish source (a Qualcomm executive). However it is a promotional product-demo context and the exact number could not be confirmed verbatim due to 403 fetch blocks. Confident that Qualcomm uses an in-house on-device AI coding assistant internally; less certain on precise scale."
+    },
+    {
+      "tool_name": "Qualcomm Verilog/HDL code-generation LLMs (fine-tuned LLaMA 3.1 8B on in-house IP)",
+      "how_used": ["developer workflow/IDE", "other - hardware/chip design code (HDL) generation"],
+      "what_for": [
+        "Generating Verilog/HDL for chip design using models fine-tuned on Qualcomm in-house IP validated through tape-outs",
+        "Evaluating external specialized Verilog models (e.g., NYU Tandon CL Verilog) for potential internal/commercial use"
+      ],
+      "teams": "hardware/chip-design engineering (unnamed specific org)",
+      "scale": "unknown",
+      "internal_vs_product": "internal_dev",
+      "supporting_source_urls": [
+        "https://arxiv.org/pdf/2503.13116",
+        "https://techxplore.com/news/2025-06-ai-specialized-chip-language.html"
+      ],
+      "confidence_note": "Low-medium. Evidence is from academic papers / research news indicating Qualcomm engineers fine-tune LLMs on in-house Verilog IP and receive specialized models for evaluation. Shows applied interest in LLM code generation for HDL, but no quantified internal deployment or production-workflow detail."
+    },
+    {
+      "tool_name": "CodeMate (third-party agentic coding agent on Snapdragon X)",
+      "how_used": ["product integration"],
+      "what_for": [
+        "CodeMate's end-to-end AI coding agent (write/secure/quality-gate code in IDE; automate code review and security analysis across GitHub/GitLab/Bitbucket/Azure DevOps) running ON-DEVICE on Snapdragon X-Series",
+        "Showcasing on-device AI coding for developers, students, institutions (India Mobile Congress 2025)"
+      ],
+      "teams": "n/a — Qualcomm is the silicon/platform partner; CodeMate AI is the vendor",
+      "scale": "unknown",
+      "internal_vs_product": "product_integration",
+      "supporting_source_urls": [
+        "https://www.qualcomm.com/developer/blog/2025/09/codemate-coding-with-on-device-ai",
+        "https://codemate.ai/"
+      ],
+      "confidence_note": "High that this is a product/ISV integration (CodeMate runs on Snapdragon hardware), NOT evidence that Qualcomm engineers use CodeMate internally. Included to flag product_integration noise vs internal dogfooding."
+    },
+    {
+      "tool_name": "Contextual AI RAG engineering assistant (NOT a coding tool)",
+      "how_used": ["internal automation", "other - documentation Q&A / knowledge retrieval"],
+      "what_for": [
+        "Querying and synthesizing dense internal + external technical documentation to speed up resolving customer engineering issues"
+      ],
+      "teams": "Customer Engineering / broader engineering org (VP of Engineering Yogi Chiniga)",
+      "scale": "'thousands of engineers' in daily workflows as of Nov 2024 (vendor case study)",
+      "internal_vs_product": "internal_dev",
+      "supporting_source_urls": [
+        "https://contextual.ai/case-study/qualcomm"
+      ],
+      "confidence_note": "Medium for the documentation-assistant claim (vendor case study, not directly fetchable / 403). Explicitly NOT an agentic coding/developer tool — included for completeness and to avoid miscounting it as a coding assistant."
+    }
+  ],
+  "notes": "Primary takeaway: Qualcomm's clearest internal use of an AI coding tool is its OWN in-house on-device code-generation assistant (LLaMA 3 8B on Snapdragon NPU, in Visual Studio), used by a reported 1,500+ engineers for millions of lines of code, deliberately on-device to protect proprietary IP from cloud/hyperscaler models. There is also applied use of fine-tuned LLMs for Verilog/HDL chip-design code. NO evidence was found of Qualcomm internally adopting named third-party agentic coding agents (Claude Code, GitHub Copilot agent mode/Workspace, OpenAI Codex/Operator, Amazon Q Developer, Gemini CLI, Antigravity, Cursor, Devin, Windsurf, Cowork). CodeMate is a Snapdragon product/ISV integration, not internal use; Contextual AI is an internal documentation RAG assistant, not a coding tool. Several key source pages (cio.com, contextual.ai, LinkedIn, starthub) returned HTTP 403 to direct fetch, so figures rely on consistent search-result summaries — treat exact numbers with mild caution."
+}

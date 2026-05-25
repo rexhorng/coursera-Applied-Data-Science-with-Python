@@ -1,0 +1,107 @@
+{
+  "company": "Qualcomm",
+  "ticker": "QCOM",
+  "company_key": "qualcomm",
+  "research_date": "2026-05-25",
+  "agent": "A_evidence_finder",
+  "no_evidence_found": false,
+  "tools_found": [
+    {
+      "tool_name": "Qualcomm in-house on-device AI code-generation assistant (LLaMA 3 8B on Snapdragon NPU, integrated with Visual Studio)",
+      "tool_category": "AI code assistant",
+      "signal_types": ["internal_dogfooding", "product_integration"],
+      "signal_summary": "Qualcomm runs an in-house AI code-generation assistant on-device using a LLaMA 3 8B model on Snapdragon NPUs, integrated into Visual Studio. Per a Qualcomm VP demo, it is used by 1,500+ Qualcomm engineers and is responsible for millions of lines of code; Qualcomm built it to keep proprietary code off cloud/hyperscaler models. This doubles as a showcase of the Snapdragon X NPU platform's on-device coding capability.",
+      "evidence": [
+        {
+          "claim": "Qualcomm has an in-house code assistant used by 1,500+ engineers, responsible for millions of lines of code, running an on-device LLaMA 3 (8B) model on the Snapdragon NPU and integrated with Visual Studio; built so proprietary code is not sent to cloud/hyperscaler models.",
+          "source_url": "https://www.cio.com/video/3992537/snapdragon-npu-powers-ai-code-generation-at-the-edge.html",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": "2025-06",
+          "quote": "in-house code assistant used by 1,500+ engineers at Qualcomm, responsible for millions of lines of code"
+        },
+        {
+          "claim": "CIO.com DEMO video: host Keith Shaw visits Qualcomm HQ in San Diego; Jeff Monday (Qualcomm VP, Global Enterprise & Channel Sales) demos secure, low-latency on-device code generation on the Snapdragon NPU using LLaMA 3 in Visual Studio, available on any Snapdragon X/X Plus/X Elite device since June.",
+          "source_url": "https://www.linkedin.com/posts/jeffmonday_snapdragon-npu-powers-ai-code-generation-activity-7333884880382042112-LRlB",
+          "source_type": "exec_quote",
+          "source_quality": "credible_secondary",
+          "date": "2025-06",
+          "quote": "Snapdragon NPU powers AI code generation at the edge"
+        },
+        {
+          "claim": "Republished version of the CIO demo describing on-device code generation with LLaMA 3 model and Visual Studio on Snapdragon NPU, framed for developers and enterprise teams keeping sensitive data off the cloud.",
+          "source_url": "https://starthub.asia/snapdragon-npu-powers-ai-code-generation-at-the-edge/",
+          "source_type": "reputable_news",
+          "source_quality": "weak",
+          "date": "2025",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "tool_name": "Qualcomm Verilog/HDL code-generation LLMs (fine-tuned LLaMA 3.1 8B on in-house chip-design IP)",
+      "tool_category": "AI code assistant",
+      "signal_types": ["internal_dogfooding"],
+      "signal_summary": "Academic/industry work indicates Qualcomm engineers fine-tune LLaMA-3.1-8B-class models on in-house Verilog/HDL IP (validated through multiple tape-outs) for hardware-design code generation, and Qualcomm has received specialized Verilog models (e.g., NYU Tandon's CL Verilog) for evaluation. This points to applied-use of LLM coding tools for chip design, though scale of internal deployment is not quantified.",
+      "evidence": [
+        {
+          "claim": "Qualcomm engineers fine-tuned LLaMA-3.1-8B on a Verilog dataset supplemented with in-house IP validated through multiple tape-outs; paper discusses IP-protection vs utility tradeoffs for design-house coding LLMs.",
+          "source_url": "https://arxiv.org/pdf/2503.13116",
+          "source_type": "other",
+          "source_quality": "credible_secondary",
+          "date": "2025-03",
+          "quote": null
+        },
+        {
+          "claim": "NYU Tandon's specialized Verilog code-generation models (CL Verilog, successor to VeriGen) were provided to hardware companies including Qualcomm and NXP for evaluation of potential commercial applications.",
+          "source_url": "https://techxplore.com/news/2025-06-ai-specialized-chip-language.html",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": "2025-06",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "tool_name": "CodeMate (third-party AI coding agent running on-device on Snapdragon X)",
+      "tool_category": "agentic coding agent",
+      "signal_types": ["product_integration", "vendor_maker"],
+      "signal_summary": "CodeMate AI (a third-party end-to-end AI coding agent for IDEs, code review, and security analysis) announced a collaboration with Qualcomm at India Mobile Congress 2025 to run on-device on Snapdragon X-Series processors. This is a Qualcomm platform/ISV partnership (product integration), not evidence of Qualcomm engineers using CodeMate internally.",
+      "evidence": [
+        {
+          "claim": "Qualcomm developer blog post titled 'CodeMate: transforming developer productivity with on-device AI assistance', describing CodeMate as an on-device AI coding assistant optimized for Snapdragon X-Series.",
+          "source_url": "https://www.qualcomm.com/developer/blog/2025/09/codemate-coding-with-on-device-ai",
+          "source_type": "company_blog",
+          "source_quality": "primary",
+          "date": "2025-09",
+          "quote": null
+        },
+        {
+          "claim": "CodeMate AI announced a strategic collaboration with Qualcomm at India Mobile Congress 2025, enabling CodeMate to run as an on-device AI application on Snapdragon X-Series processors.",
+          "source_url": "https://codemate.ai/",
+          "source_type": "vendor_case_study",
+          "source_quality": "credible_secondary",
+          "date": "2025-10",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "tool_name": "Contextual AI RAG engineering assistant (NOT a coding agent)",
+      "tool_category": "other",
+      "signal_types": ["internal_dogfooding"],
+      "signal_summary": "Qualcomm deployed a Contextual AI RAG (RAG 2.0) assistant used by thousands of engineers to query/synthesize internal and external technical documentation for Customer Engineering. Included for completeness: this is internal AI adoption for engineering Q&A/documentation, NOT an agentic coding/developer tool.",
+      "evidence": [
+        {
+          "claim": "Qualcomm (VP of Engineering Yogi Chiniga and team) deployed a Contextual AI RAG solution that, as of Nov 2024, is incorporated into the daily workflows of thousands of engineers to query dense internal technical documentation; this is documentation Q&A, not code generation.",
+          "source_url": "https://contextual.ai/case-study/qualcomm",
+          "source_type": "vendor_case_study",
+          "source_quality": "credible_secondary",
+          "date": "2024-11",
+          "quote": "incorporated into the daily workflows of thousands of engineers across various technology areas"
+        }
+      ]
+    }
+  ],
+  "notes": "STRONGEST SIGNAL: Qualcomm operates an in-house on-device AI code-generation assistant (LLaMA 3 8B on Snapdragon NPU, in Visual Studio) reportedly used by 1,500+ engineers for millions of lines of code, per a Qualcomm-VP CIO.com demo video (~June 2025, Jeff Monday). This is genuine internal_dogfooding, but also serves as a Snapdragon-X product showcase, so signal is mixed. CAVEAT: The '1,500+ engineers / millions of lines of code' figure appeared consistently across multiple WebSearch result summaries pointing to the CIO.com video + LinkedIn repost, but I could NOT directly load (HTTP 403) the cio.com video page, the cio.com Modern Workplace mirror, the starthub.asia mirror, the contextual.ai pages, or the LinkedIn post to read the exact words verbatim; the quote field reflects the search-result paraphrase, treat the precise number/wording with mild caution. NO EVIDENCE of Qualcomm internally using named third-party agentic coding tools (Claude Code, GitHub Copilot/Workspace/agent mode, OpenAI Codex/Operator, Amazon Q Developer, Gemini CLI, Antigravity, Cursor, Devin, Windsurf, Cowork) — searches for each by name + Qualcomm + job postings returned only generic 'best AI tools 2026' listicles (non-evidence) and comparison pages. CodeMate is a third-party ISV product running ON Snapdragon (product integration / Qualcomm-as-platform), not Qualcomm engineers using it. Contextual AI is internal but is a documentation RAG assistant, not a coding tool. Searches run: GitHub Copilot+Qualcomm internal; Cursor+Qualcomm; Qualcomm engineering blog AI coding assistant; Amon earnings call AI coding; Claude Code/Amazon Q/Devin+Qualcomm; CodeMate; Qualcomm job postings + tool names; Qualcomm internal AI tools generative AI; Gemini CLI/Windsurf/Amazon Q/Copilot case study; in-house code assistant 1500 engineers; LLM lines of code; Snapdragon NPU code generation CIO video; LLaMA 3 8B proprietary code; Jeff Monday 1500 engineers; Verilog LLM in-house IP chip design; official adoption announcement. Qualcomm AI Hub / Snapdragon on-device AI / AI Inference Suite are product platforms (on-device AI for customers), explicitly treated as product noise, not internal dev-tool use."
+}
