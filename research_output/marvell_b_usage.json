@@ -1,0 +1,40 @@
+{
+  "company": "Marvell Technology",
+  "company_key": "marvell",
+  "agent": "B_usage_analyst",
+  "no_usage_evidence": false,
+  "tool_usage": [
+    {
+      "tool_name": "Synopsys.ai Formal Advisor Copilot (generative AI for chip verification)",
+      "how_used": ["internal automation", "other - EDA chip design/verification workflow (generative-AI-assisted formal verification)"],
+      "what_for": [
+        "Automated generation of formal testbenches / properties from documented or natural-language specifications",
+        "Accelerating formal verification of complex custom AI silicon designs",
+        "Reducing verification turnaround time",
+        "Onboarding/ramping new and early-career verification engineers"
+      ],
+      "teams": "Marvell verification / design verification engineering (formal verification group). Specific org names not disclosed.",
+      "scale": "Not precisely disclosed for Marvell. Synopsys materials cite ~4-5x productivity boost for early Formal Advisor customers and a ~35% engineering-productivity gain for early-career and expert engineers in formal-verification workflows; the 35% figure was attributed to an unnamed 'leading AI infrastructure solutions provider' and is not verbatim-confirmed as Marvell. Treat all figures as vendor-reported with caveats.",
+      "internal_vs_product": "internal_dev",
+      "supporting_source_urls": [
+        "https://www.synopsys.com/success-stories/marvell-gen-ai-formal-verification.html",
+        "https://www.edge-ai-vision.com/2026/05/new-synopsys-ai-copilots-deliver-2-5x-faster-chip-design-productivity/",
+        "https://www.synopsys.com/ai/generative-ai.html"
+      ],
+      "confidence_note": "Medium-high that Marvell uses Synopsys.ai Formal Advisor Copilot for formal verification (official Synopsys success story, dated 2026-03-10, names Marvell). Lower confidence on exact scale numbers, since the most specific percentage was tied to an unnamed provider in secondary materials. Note this is EDA-domain generative AI, NOT a general-purpose agentic software-coding agent like Claude Code/Copilot/Cursor."
+    },
+    {
+      "tool_name": "General agentic / AI software-coding agents (Claude Code, GitHub Copilot, Cursor, Devin, Amazon Q, Gemini, Windsurf, Codex, etc.)",
+      "how_used": ["other - no documented internal usage found"],
+      "what_for": ["unknown"],
+      "teams": "unknown",
+      "scale": "unknown",
+      "internal_vs_product": "unknown",
+      "supporting_source_urls": [
+        "https://www.marvell.com/blogs/ai-at-scale-a-special-report.html"
+      ],
+      "confidence_note": "No public evidence found that Marvell internally adopts any named general-purpose agentic coding agent. Marvell published thought-leadership commentary on gen-AI code development ('AI at Scale' special report / VentureBeat), but this does not document an internal tool stack. Reported as no-evidence for this category."
+    }
+  ],
+  "notes": "The only concrete, primary-sourced developer-AI usage tied to Marvell is EDA-domain: Synopsys.ai Formal Advisor Copilot for formal (chip) verification, per an official Synopsys customer success story (2026-03-10). This reflects the EDA-AI vs general-coding-AI distinction expected for a custom-silicon company: Marvell's verifiable AI-in-engineering signal is in chip-design/verification tooling, not in mainstream software-developer agentic coding agents. No evidence of internal Claude Code, GitHub Copilot, Cursor, Devin, Amazon Q, Gemini CLI, Windsurf, or OpenAI Codex usage at Marvell. Vendor-reported productivity figures (4-5x; ~35%) should be cited with caveats; the 35% figure's attribution to Marvell specifically could not be fully verified from primary text (synopsys.com pages returned HTTP 403 to the fetch tool, so detail comes from search snippets)."
+}

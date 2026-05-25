@@ -1,0 +1,67 @@
+{
+  "company": "Marvell Technology",
+  "ticker": "MRVL",
+  "company_key": "marvell",
+  "research_date": "2026-05-25",
+  "agent": "A_evidence_finder",
+  "no_evidence_found": false,
+  "tools_found": [
+    {
+      "tool_name": "Synopsys.ai Formal Advisor Copilot (generative AI for chip verification)",
+      "tool_category": "other",
+      "signal_types": ["internal_dogfooding"],
+      "signal_summary": "Synopsys published an official customer success story stating Marvell adopted its Synopsys.ai Formal Advisor Copilot generative-AI tool to accelerate formal (chip) verification, automating formal testbench/property generation from natural-language or documented specifications. This is EDA-domain generative AI, not a general-purpose agentic software-coding agent.",
+      "evidence": [
+        {
+          "claim": "Marvell adopted Synopsys.ai Formal Advisor Copilot generative AI to accelerate formal verification, automating property/testbench generation and improving verification times and onboarding for new engineers.",
+          "source_url": "https://www.synopsys.com/success-stories/marvell-gen-ai-formal-verification.html",
+          "source_type": "vendor_case_study",
+          "source_quality": "primary",
+          "date": "2026-03-10",
+          "quote": "Marvell Accelerates Formal Verification Adoption Using Generative AI"
+        },
+        {
+          "claim": "Synopsys.ai Copilots (including Formal Advisor) generate syntactically correct formal testbenches directly from documented or natural-language specifications, with initial customers reporting roughly 4-5x productivity boost on the Formal Advisor tool.",
+          "source_url": "https://www.edge-ai-vision.com/2026/05/new-synopsys-ai-copilots-deliver-2-5x-faster-chip-design-productivity/",
+          "source_type": "reputable_news",
+          "source_quality": "credible_secondary",
+          "date": "2026-05",
+          "quote": null
+        },
+        {
+          "claim": "A leading AI infrastructure solutions provider (consistent with Marvell's positioning, but not explicitly named in this secondary excerpt) observed a ~35% boost in engineering productivity for early-career and expert engineers in formal verification workflows via automated formal testbench creation.",
+          "source_url": "https://www.synopsys.com/ai/generative-ai.html",
+          "source_type": "vendor_case_study",
+          "source_quality": "credible_secondary",
+          "date": null,
+          "quote": null
+        }
+      ]
+    },
+    {
+      "tool_name": "Gen AI-powered code development (general / thought-leadership)",
+      "tool_category": "AI code assistant",
+      "signal_types": ["vendor_maker"],
+      "signal_summary": "Marvell published/hosted a thought-leadership blog article ('The path forward for gen AI-powered code development in 2025') as part of its 'AI at Scale' special report discussing what AI-powered coding tools can and cannot do. This is editorial commentary, not documented evidence that Marvell internally uses a specific named coding agent.",
+      "evidence": [
+        {
+          "claim": "Marvell published an article in its 'AI at Scale' special report titled 'The path forward for gen AI-powered code development in 2025,' discussing capabilities and limits of AI-powered coding tools; it is thought leadership rather than a disclosure of Marvell's own internal tool stack.",
+          "source_url": "https://www.marvell.com/blogs/ai-at-scale-a-special-report.html",
+          "source_type": "company_blog",
+          "source_quality": "weak",
+          "date": "2025",
+          "quote": null
+        },
+        {
+          "claim": "A version of the same gen-AI code-development article appeared on VentureBeat.",
+          "source_url": "https://venturebeat.com/ai/the-path-forward-for-gen-ai-powered-code-development-in-2025",
+          "source_type": "reputable_news",
+          "source_quality": "weak",
+          "date": "2025",
+          "quote": null
+        }
+      ]
+    }
+  ],
+  "notes": "SEARCH COVERAGE: Ran ~13 web searches (2025/2026-dated) covering GitHub Copilot, Claude Code, Cursor, Devin, Amazon Q Developer, Gemini, Windsurf, OpenAI Codex/Operator, Cadence Cerebrus, Synopsys.ai/DSO.ai, Anthropic, plus angles: Marvell engineering blog, Matt Murphy earnings/exec quotes (SEC 8-Ks), EDA-AI chip design, firmware/RTL/Verilog internal dev, job postings, vendor case studies, DVCon 2026, vibe coding. STRONGEST/ONLY SOLID SIGNAL: Synopsys official success story (dated 2026-03-10) naming Marvell as a user of Synopsys.ai Formal Advisor Copilot generative AI for FORMAL VERIFICATION (EDA domain), not a general software-coding agent. CAVEATS: (1) The 35% productivity figure surfaced in Synopsys secondary materials and was attributed to an unnamed 'leading AI infrastructure solutions provider'; could not 100% confirm via verbatim primary text that the 35% maps specifically to Marvell (the named Marvell story emphasizes reduced verification times and improved onboarding; a separate 4-5x figure is cited generically for Formal Advisor). (2) The synopsys.com and venturebeat.com URLs returned HTTP 403 to the fetch tool, so quotes are drawn from search-result snippets, not full-page reads. NO EVIDENCE FOUND for Marvell internal use of any general-purpose agentic coding agent: no hits for Claude Code, GitHub Copilot (incl. agent/Workspace mode), Cursor, Devin, Windsurf, Amazon Q Developer, Gemini CLI, OpenAI Codex/Operator, Antigravity, or Cowork tied to Marvell. No exec/earnings quote (Matt Murphy) referenced internal developer AI coding tools. No Marvell job posting naming these tools surfaced. Generic 'best AI coding tools 2026' listicles were treated as non-evidence and excluded."
+}
