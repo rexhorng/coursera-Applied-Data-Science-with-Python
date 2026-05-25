@@ -1,0 +1,28 @@
+{
+  "operation": "Agentic AI developer-tool adoption - 10-company public-intelligence sweep",
+  "orchestrator_last_updated": "2026-05-25",
+  "phases": {
+    "A_evidence_finder": "in_progress (pilot)",
+    "B_usage_analyst": "in_progress (merged with A per company)",
+    "C_verifier": "pending",
+    "D_report_writer": "pending"
+  },
+  "design_notes": [
+    "TodoWrite tool is unavailable in this environment; per-company status is tracked in this file instead.",
+    "Phases A and B are produced by a single research pass per company (the same sources establish both existence and usage detail), but the two specified output files (_a_findings.json and _b_usage.json) are still written separately per company.",
+    "Confidence tiers assigned in phase C: T1=confirmed (company's own statement / earnings / official vendor case study naming the company), T2=strong (reputable journalism w/ named sourcing, conference talk, explicit job posting), T3=weak (single low-quality/SEO source or inference), T4=no evidence found.",
+    "Vendor nuance: Microsoft (owns GitHub Copilot), Google (makes Gemini CLI/Antigravity), Amazon (makes Q), Apple etc. may BUILD tools as well as USE them - these are tracked as distinct signals."
+  ],
+  "companies": {
+    "apple":     {"label": "Apple (AAPL)",                 "research": "pending",     "verify": "pending", "report": "pending"},
+    "amd":       {"label": "AMD (AMD)",                     "research": "pending",     "verify": "pending", "report": "pending"},
+    "nvidia":    {"label": "NVIDIA (NVDA)",                 "research": "in_progress", "verify": "pending", "report": "pending"},
+    "broadcom":  {"label": "Broadcom (AVGO)",               "research": "pending",     "verify": "pending", "report": "pending"},
+    "mediatek":  {"label": "MediaTek (2454.TW)",            "research": "pending",     "verify": "pending", "report": "pending"},
+    "qualcomm":  {"label": "Qualcomm (QCOM)",               "research": "pending",     "verify": "pending", "report": "pending"},
+    "google":    {"label": "Alphabet / Google (GOOGL)",    "research": "pending",     "verify": "pending", "report": "pending"},
+    "marvell":   {"label": "Marvell Technology (MRVL)",    "research": "pending",     "verify": "pending", "report": "pending"},
+    "cisco":     {"label": "Cisco Systems (CSCO)",          "research": "pending",     "verify": "pending", "report": "pending"},
+    "microsoft": {"label": "Microsoft (MSFT)",             "research": "in_progress", "verify": "pending", "report": "pending"}
+  }
+}
